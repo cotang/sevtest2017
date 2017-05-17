@@ -1,0 +1,67 @@
+.banner{
+  padding: 50px 0;
+}
+.banner-gallery{
+  &__item{
+    position: relative;
+  }
+  &__title{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    right: 100px;
+    background-color: rgba(#637092, 0.6);
+    color: #fff;
+    text-transform: uppercase;
+    @include font-family('Helvetica Medium', normal, normal);
+    padding: 10px;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .btn{
+    position: absolute;
+    bottom: 40px;
+    left: 25px;
+    font-size: 12px;
+  }
+  .slick-dots{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+    li{
+      display: inline-block;
+      margin: 0 5px;
+      button{
+        display: block;
+        width: 12px;
+        height: 12px;
+        color: transparent;
+        background-color: $white;
+        border: none;
+        outline: none;
+        border-radius: 50%;
+        padding: 0;
+      }
+    }
+    li.slick-active{
+      button{
+        background-color: $light-blue;
+      }
+    }
+  }
+
+}
+.banner-form{
+  border: 1px solid $blue;
+  padding: 5px 35px;
+  &__title{
+    color: $blue;
+    @include font-family('Helvetica Bold', normal, normal);
+    margin: 10px 0 10px;
+    font-size: 28px;
+  }
+}

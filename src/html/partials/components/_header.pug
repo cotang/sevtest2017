@@ -1,0 +1,81 @@
+mixin header()
+
+  // Header
+  +b.HEADER.header
+    .container
+      +e.inner
+        +e.logo
+          // Logo
+          +b.A.logo(href="index.html", itemscope, itemtype="http://schema.org/Brand")
+            img(src="img/logo.png", alt="Логотип Тест Петербург", title="Тест Петербург Сертификация", itemprop="logo")
+
+        +e.contacts
+          // City
+          +b.city(itemscope, itemtype="http://schema.org/ContactPoint")
+            +e.column
+              +e.name-wrapper
+                +e.A.name(href="#", itemprop="areaServed") Санкт-Петербург
+                +e.UL.dropdown
+                  +e.item
+                    +e.A.link(href="#", data-email='otdel1@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Москва
+                  +e.item
+                    +e.A.link(href="#", data-email='otdel2@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Санкт-Петербург
+                  +e.item
+                    +e.A.link(href="#", data-email='otdel3@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Краснодар
+                  +e.item
+                    +e.A.link(href="#", data-email='otdel4@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Пермь
+                  +e.item
+                    +e.A.link(href="#", data-email='otdel5@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Сургут
+                  +e.item
+                    +e.A.link(href="#", data-email='otdel6@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Уфа
+                  +e.item
+                    +e.A.link(href="#", data-email='otdel7@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Курган
+              +e.address ул. Яблочкова, д. 12, лит. Ц., оф. 314
+              +e.working-hours с 9:30 до 18:00
+            +e.column
+              +e.tel-wrapper
+                +e.A.tel(href="tel:+78124935927", target="_blank", itemprop="telephone") +7 (812) 493-59-27
+                +e.A.tel(href="tel:+78129512642", target="_blank", itemprop="telephone") +7 (812) 951-26-42
+              +e.email-wrapper
+                +e.A.email(href="mailto:otdel@rostest.net", target="_blank", itemprop="email") spb@sevtest.ru
+
+        +e.social
+          +b.social
+            +e.A.link--rss(href="#", title="rss link")
+            +e.A.link--vk(href="#", title="vkontakte link")
+            +e.A.link--tw(href="#", title="twitter link")
+            +e.A.link--fb(href="#", title="facebook link")
+          +b.A.btn(href="#", data-form='call') Позвонить
+          +b.A.btn--white(href="#", data-form='map') На карте
+
+    +e.nav
+      .container
+        // Nav
+        +b.NAV.nav
+          +e.UL.list
+            li.menu-item
+              a(href="page-about.html") О компании
+            li.menu-item
+              a(href="page-services.html") Услуги
+            li.menu-item
+              a(href="page-offers.html") Акции
+            li.menu-item
+              a(href="page-reviews.html") Отзывы
+            li.menu-item
+              a(href="page-faq.html") Полезная информация
+            li.menu-item
+              a(href="page-contacts.html") Контакты
+            li.menu-item.menu-item--search
+              a(href="#", title="Поиск")
+          +e.hamburger
+            +b.A.hamburger(href="#")
+              span
+
+      // Search
+      +b.search
+        +e.bg
+        +e.inner
+          .container
+            +e.FORM.form
+              +e.INPUT.input(type='text', name='Поиск', placeholder='Введите слово для поиска')
+            //- +e.A.close(href="#")

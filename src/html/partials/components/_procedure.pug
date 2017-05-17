@@ -1,0 +1,31 @@
+mixin procedure()
+
+  +b.SECTION.procedure
+    .container
+      if pageServices
+        +e.H2.title Ваши документы почти готовы
+        +e.P.text Всего 4 этапа оформления
+      else
+        +e.H2.title Как получить сертификат
+
+      .row
+        +e.step.col-xs-12.col-lg-3
+          //- +e.IMG.img(src="", alt="")
+          +e.text Обратиться к нашему эксперту и узнайть какой документ вам нужен
+
+        +e.step.col-xs-12.col-lg-3
+          //- +e.IMG.img(src="", alt="")
+          +e.text Предоставить докуметы и/или образцы продукции
+
+        +e.step.col-xs-12.col-lg-3
+          //- +e.IMG.img(src="", alt="")
+          +e.text Подождать окончания экспертиз или разработки документации
+
+        +e.step.col-xs-12.col-lg-3
+          //- +e.IMG.img(src="", alt="")
+          +e.text Получить готовый документ у нашего курьера в удобное для вас время
+
+      +e.link
+        +b.btn(href="#") Оформить сертификат
+
+

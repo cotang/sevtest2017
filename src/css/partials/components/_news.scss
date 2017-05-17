@@ -1,0 +1,57 @@
+.news-section{
+  text-align: center;
+  padding-bottom: 60px;
+  @include mq($from:xs, $until:lg){
+    padding-bottom: 20px;
+  }
+
+  &__title{    
+    margin: 0;
+    padding: 60px 0 30px;
+    @include font-family('Proxima Nova Light', normal, normal);
+    font-size: $font-size-title;
+    color: $text-black;
+    @include mq($from:xs, $until:lg){
+      padding-top: 30px;
+      font-size: $font-size-subtitle;
+    }
+  }
+  .btn{
+    padding: 15px 30px;
+    border-radius: 30px;
+  }
+}
+.news-item{
+  text-align: left;
+  &__wrapper{
+    box-shadow: 0px 1px 7px 0px rgba(30, 30, 30, 0.27);
+    border-radius: 3px;
+  }
+  &__title{
+    margin: 0;
+    padding: 20px;
+    @include font-family('Proxima Nova Bold', normal, normal);
+    font-size: $font-size-small;
+    color: $text-black;
+  }
+  &__text{
+    background-color: $grey-bg;
+    padding: 20px 20px 0;
+    p{
+      margin: 0;
+    }
+  }
+  &__date{
+    background-color: $grey-bg;
+    padding: 20px;
+  }
+  &__link{
+    text-decoration: underline;
+    display: block;
+    margin: 20px 0 40px;
+  }
+  &__more{
+    display: flex;
+    justify-content: space-between;
+  }
+}

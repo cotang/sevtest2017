@@ -1,0 +1,97 @@
+.footer{
+  color: $grey-light;
+  position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/pattern.png);
+    background-repeat: repeat;
+    z-index: -2;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-image: linear-gradient( 0deg, rgb(24,117,177) 0%, rgb(4,157,228) 100%);
+    background-image: linear-gradient( 0deg, rgb(21,21,21) 0%, rgb(65,64,64) 100%);
+    box-shadow: 0px 0px 10px 0px rgba(30, 30, 30, 0.44);
+    z-index: -1;
+    opacity: .8;
+  }
+  &__inner{
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__info{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    @include mq($from:xs, $until:md){
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+  &__nav{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    @include mq($from:xs, $until:md){
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+  &__widget{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    @include mq($from:xs, $until:md){
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  &__copyright{
+    font-size: $font-size-small;
+  }
+}
+
+.footer-contacts{
+  margin-top: 20px;
+  &__tel{
+    display: block;
+    margin: 10px 0;
+    font-size: $font-size-big;
+    color: $text-white;
+  }
+  &__email{
+    color: $grey-light;
+    &:hover, &:focus {
+      color: $text-white;
+    }
+  }
+}
+
+.nav-footer{
+  &__list{
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: $font-size-small;
+    > .menu-item{
+      margin: 15px 0;
+      > a{
+        color: $grey-light;
+        text-decoration: underline;
+        &:hover, &:focus {
+          color: $text-white;
+        }
+      }
+    }
+  }
+}

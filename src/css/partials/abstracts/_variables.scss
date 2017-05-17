@@ -1,0 +1,124 @@
+/*
+  Project variables
+  =================
+*/
+
+
+/*
+  Flex Sass grid generator variables
+  ==================================
+*/
+
+$base-font-size:              16px;
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
+
+$screen-xs:                   0; // Extra small screen / phone
+$screen-sm:                   480px; // Small screen / phone
+$screen-md:                   768px; // Medium screen / tablet
+$screen-lg:                   1024px; // Large screen / desktop
+$screen-xl:                   1200px; // Extra large screen / wide desktop
+//$screen-xxl:                  1890px; // Super large screen / extra wide desktop
+
+$container-max-widths: (
+        sm:                   480px,
+        md:                   768px,
+        lg:                   1024px,
+        xl:                   1200px
+) !default;
+
+
+$grid-breakpoints: (
+        xs:                   0,
+        sm:                   540px,
+        md:                   768px,
+        lg:                   1024px,
+        xl:                   1280px
+) !default;
+
+/*
+  Sass MQ variables
+  =================
+
+  [sass-mq](https://github.com/sass-mq/sass-mq)
+*/
+
+$mq-breakpoints: (
+        xs:                   0px,
+        sm:                   540px,
+        md:                   768px,
+        lg:                   1024px,
+        xl:                   1280px
+) !default;
+
+
+
+//------------------------------------------------------------------------------
+//  Colors
+//------------------------------------------------------------------------------
+
+
+// Color table
+
+$white:                       #ffffff;
+$black:                       #000000;
+
+$red:                         #e1202b;
+$dark-red:                    #c81721;
+$blue:                        #39487d;
+$blue-bg:                     #f2fbff;
+$light-blue:                  #298dd4;
+$dark-blue:                   #243367;
+
+
+
+$grey:                        #373736;
+$grey-text:                   #333333;
+
+
+// Colors in use
+
+$body-bg:                     $white;
+$text-color:                  $grey-text;
+
+$text-black:                  $black;
+$text-blue:                   $blue;
+$text-white:                  $white;
+
+$link-color:                  $light-blue;
+$link-color-active:           $blue;
+
+
+//------------------------------------------------------------------------------
+//  Typography
+//------------------------------------------------------------------------------
+
+
+// $font-family:                   'Proxima Nova Regular', Helvetica, Arial, sans-serif;
+// $font-family--light:            'Proxima Nova Light', Helvetica, Arial, sans-serif;
+// $font-family--bold:             'Proxima Nova Bold', Helvetica, Arial, sans-serif;
+
+
+// $font-family--serif:          Georgia, "Times New Roman", Times, serif;
+// $font-family--monospace:      Menlo, Monaco, Consolas, "Courier New", monospace;
+
+
+
+$font-size:                   16px;
+$font-size-title:             36px;
+
+$font-size-header:            15px;
+$font-size-nav:               16px;
+
+
+$font-size-big:               18px;
+$font-size-small:             14px;
+
+
+// $font-size-h2:                24px;
+// $font-size-h3:                20px;
+
+// $line-height:                 1.75;
+
+
+

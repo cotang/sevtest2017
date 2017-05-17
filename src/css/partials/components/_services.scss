@@ -1,0 +1,196 @@
+.services{
+  text-align: center;
+  padding-bottom: 80px;
+  @include mq($from:xs, $until:lg){
+    padding-bottom: 40px;
+  }
+
+  &__title{    
+    margin: 0;
+    padding: 60px 0 0px;
+    @include font-family('Proxima Nova Light', normal, normal);
+    font-size: $font-size-title;
+    color: $text-black;
+    @include mq($from:xs, $until:lg){
+      padding-top: 20px;
+      font-size: $font-size-subtitle;
+    }
+  }
+  &__switcher{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  &__content{
+    background-color: $grey-bg;
+    border-radius: 3px;
+    padding: 15px 0;
+    box-shadow: 0px 1px 7px 0px rgba(30, 30, 30, 0.27);
+  }
+  &__link{
+    display: block;
+    padding: 0 10px;
+    text-transform: uppercase;
+    font-size: $font-size-big;
+    color: $text-color;
+    position: relative;
+    @include mq($from:xs, $until:lg){
+      font-size: $font-size;
+    }
+
+    &:before{
+      content: '';
+      display: block;
+      margin: 25px auto;
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      background-color: $grey-bg;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      bottom: 30px;
+    }
+    &:hover, &:focus, &:active{
+      color: $text-blue;
+      text-decoration: none;      
+      &:after{
+        bottom: 28px;
+        height: 5px;
+        background-color: $text-blue;
+      }
+    }
+
+    &--active{
+      color: $text-blue;
+      text-decoration: none;      
+      &:after{
+        bottom: 28px;
+        height: 5px;
+        background-color: $text-blue;
+      }
+    }
+    &--active.services__link--production{
+      &:before{
+        @include sprite($s-offer-production-blue);
+      }
+    }    
+    &--active.services__link--docs{
+      &:before{
+        @include sprite($s-offer-doc-blue);
+      }
+    }
+
+    &--production{
+      &:before{
+        @include sprite($s-offer-production-grey);
+      }
+      &:hover, &:focus, &:active{
+        &:before{
+          @include sprite($s-offer-production-blue);
+        }
+
+      }
+    }
+    &--docs{
+      &:before{
+        @include sprite($s-offer-doc-grey);
+      }
+      &:hover, &:focus, &:active{
+        &:before{
+          @include sprite($s-offer-doc-blue);
+        }
+      }      
+    }
+  }
+}
+
+.services-type{
+  display: none;
+  &:first-of-type{
+    display: block;
+  }
+  &__list{
+    padding-left: 0;
+    margin: 10px 0 0;
+    list-style-type: none;
+    columns: 3;
+    text-align: left;
+    @include mq($from:xs, $until:md){
+      columns: 1;
+    }
+
+    > .menu-item{
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+      > a{
+        color: $text-color;
+        display: block;
+        padding: 12px 5px 12px 35px;
+        margin: 0 5px 0 30px;
+        position: relative;
+        @include mq($from:xs, $until:md){
+          margin-left: 15px;
+        }
+
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+        }
+      }
+    }
+    .sub-menu{
+      padding-left: 60px;
+      margin: 0;
+      list-style-type: none;
+      @include mq($from:xs, $until:md){
+        padding-left: 40px;
+      }
+
+      > .menu-item{
+        > a{
+          color: $text-color;
+          display: block;
+          padding: 10px 5px;
+          margin-left: 20px;
+          text-decoration: underline;
+          @include mq($from:xs, $until:md){
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+
+  &--production{
+    .services-type__list{
+      > .menu-item{
+        > a{
+          &:before{
+            @include sprite($s-offer-alcohol-blue);
+          }
+        }
+      } 
+    }   
+  }
+  &--docs{
+    .services-type__list{
+      > .menu-item{
+        > a{
+          &:before{
+            @include sprite($s-round-minus);
+            width: 24px;
+            height: 24px;
+          }
+        }
+      } 
+    }   
+  }
+}

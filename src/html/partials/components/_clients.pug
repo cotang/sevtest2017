@@ -1,0 +1,24 @@
+mixin clients()
+
+  +b.SECTION.clients
+    .container
+      if index
+        +e.H2.title С нами уже работают те кто себя зарекомендовал
+      else
+        +e.H2.title Наши партнеры
+      +e.gallery
+        - for (var i = 0; i< 2; i++){
+          +e.slide
+            +e.logo
+              +e.IMG.img(src="img/logo-index/01.png", alt="")
+          +e.slide
+            +e.logo
+              +e.IMG.img(src="img/logo-index/02.png", alt="")
+          +e.slide
+            +e.logo
+              +e.IMG.img(src="img/logo-index/03.png", alt="")
+        - }
+      +e.btn
+        +e.link(href="#") Присоединиться к списку
+
+

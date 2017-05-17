@@ -1,0 +1,26 @@
+.not-found{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  &__title{
+    color: $text-blue;
+    @include font-family('Proxima Nova Regular', normal, normal);
+    margin: 20px 0 40px;
+    font-size: $font-size;
+  }
+  &__text{
+    line-height: (24/16);
+    max-width: 50%;
+    margin: 0 auto 20px;
+    @include mq($from:xs, $until:lg){
+      max-width: 100%;
+    }
+
+    a{
+      display: block;
+      margin: 10px 0;
+      color: $text-black;
+      @include font-family('Proxima Nova Bold', normal, normal);
+    }
+  }
+}

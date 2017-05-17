@@ -1,0 +1,152 @@
+.content{
+  padding: 40px 0 40px;
+  clear: both;
+  &__title{    
+    margin: 0 0 20px;
+    @include font-family('Proxima Nova Light', normal, normal);
+    font-size: $font-size-title;
+    color: $text-black;
+    @include mq($from:xs, $until:lg){
+      font-size: 28px;
+      @include font-family('Proxima Nova Regular', normal, normal);
+    }
+  }
+  &__text{
+    h2, h3, h4, h5, h6{
+      @include font-family('Proxima Nova Regular', normal, normal);
+      color: $text-black;
+    }
+    h2{
+      font-size: $font-size-h2;
+    }
+    h3{
+      font-size: $font-size-h3;
+    }
+    h4, h5, h6{
+      font-size: $font-size-big;
+    }
+  }
+
+  &__img{
+    float: left;
+    margin: 0 20px 20px 0;
+    max-width: 350px;
+    @include mq($from:xs, $until:lg){
+      margin: 0 0 20px;
+      max-width: initial;
+    }
+  }
+  &__btn{
+    margin: 20px 0;
+    text-align: center;
+    .btn{
+      text-transform: none;
+    }    
+  }
+  &__required-docs{
+    float: right;
+    margin: 0 0 20px 20px;
+    max-width: 400px;
+    @include mq($from:xs, $until:lg){
+      margin: 0 0 20px;
+      max-width: initial;
+    }
+  }
+}
+
+
+
+.content-news{
+  padding: 40px 0 60px;
+  &__title{    
+    margin: 0 0 20px;
+    @include font-family('Proxima Nova Regular', normal, normal);
+    font-size: $font-size-h2;
+    color: $text-blue;
+  }
+  &__date{
+    margin: 20px 0;
+    color: $grey-text-light;
+  }
+  &__text{
+    h2, h3, h4, h5, h6{
+      @include font-family('Proxima Nova Regular', normal, normal);
+    }
+    h2{
+      font-size: $font-size-h2;
+    }
+    h3{
+      font-size: $font-size-h3;
+    }
+    h4, h5, h6{
+      font-size: $font-size-big;
+    }
+  }
+}
+
+.content-additional{
+  // position: relative;
+  // z-index: -3;
+  margin-bottom: -15px;
+  background-color: $grey-bg;
+  &__title{
+    font-size: $font-size-subtitle;
+    @include font-family('Proxima Nova Regular', normal, normal);
+    color: $text-black;
+  }
+  &__text{
+    ul{
+      list-style-type: none;
+      padding-left: 0;      
+    }   
+    li{
+      margin: 25px 0;
+      padding-left: 30px;
+      position: relative;
+      &:before{
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+      }
+    } 
+  }
+  &__complications{
+    // margin-bottom: -15px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    li{
+      &:before{
+        @include sprite($s-minus);
+      }
+    }
+  }
+  &__our-help{
+    // margin-bottom: -15px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    li{
+      &:before{
+        @include sprite($s-plus);
+      }
+    }
+  }
+}
+
+.content-docs{
+  background-color: $grey-bg;
+  padding: 20px;
+  &__title{    
+    margin: 0 0 20px;
+    @include font-family('Proxima Nova Regular', normal, normal);
+    font-size: $font-size-subtitle;
+    color: $text-black;
+  }
+  &__btn{
+    text-align: center;
+  }
+  ul{
+    padding-left: 20px;
+  }
+
+}

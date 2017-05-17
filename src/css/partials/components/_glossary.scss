@@ -1,0 +1,58 @@
+.glossary{
+  padding-top: 40px;
+  padding-bottom: 60px;
+  text-align: center;
+  &__title{
+    margin: 0 0 15px;
+    font-size: $font-size-big;
+    @include font-family('Proxima Nova Regular', normal, normal);
+    color: $text-black;
+    text-transform: uppercase;
+  }
+  &__letters{
+    padding-bottom: 20px;
+    border-bottom: 1px solid $grey-bg;
+    font-size: $font-size-big;
+    a{      
+      text-transform: uppercase;
+      color: $text-color;
+      display: inline-block;
+      padding: 3px;
+      &:hover, &:focus {
+        color: $link-color;
+      }
+      &:active {
+        color: $link-color-active;
+      }
+    }
+  }
+  &__list{
+    text-align: left;
+    padding-left: 0;
+    padding: 0 50px;
+    margin: 10px 0;
+    list-style-type: none;
+    columns: 4;
+    font-size: $font-size-small;
+    @include mq($from:xs, $until:md){
+      columns: 2;
+      padding: 0;
+    }
+
+    .menu-item{
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+      margin: 10px 0;
+      a{
+        color: $text-color;
+        &:hover, &:focus {
+          color: $link-color;
+        }
+        &:active {
+          color: $link-color-active;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.map{
+  position: relative;
+  min-height: 470px;
+  // height: 470px;
+  &__inner{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include mq($from:xs, $until:md){
+      position: static;
+      height: 300px;
+    }
+  }
+  &__text{
+    @include mq($from:xs, $until:md){
+      background-color: rgba(0,0,0,0.75);
+    }
+  }
+  &__block{
+    width: 30%;
+    @include mq($from:xs, $until:xl){
+      width: 35%;
+    }
+    @include mq($from:xs, $until:md){
+      width: auto;
+    }
+  }
+}
+.map-contacts{
+  background-color: rgba(0,0,0,0.75);
+  color: $text-white;
+  min-height: 470px;
+  padding: 80px 40px 40px;
+  @include mq($from:xs, $until:lg){
+    padding-top: 40px;
+  }
+  @include mq($from:xs, $until:md){
+    min-height: initial;
+    background-color: transparent;
+  }
+
+  &__title{
+    margin: 0 0 20px;
+    @include font-family('Proxima Nova Light', normal, normal);
+    font-size: $font-size-title;
+    @include mq($from:xs, $until:lg){
+      font-size: $font-size-subtitle;
+    }
+  }
+  &__address{
+    margin-bottom: 15px;
+  }
+  &__time{
+    margin-bottom: 15px;
+  }
+  &__tel-wrapper{
+    margin-bottom: 15px;
+    a{
+      color: $light-blue;
+    }
+  }
+  &__email-wrapper{
+    margin-bottom: 15px;
+    a{
+      color: $light-blue;
+    }
+  }
+  .btn{
+    margin: 20px 0;
+    font-size: $font-size-small;
+  }
+  &__more{
+    display: block;
+    margin-top: 10px;
+    color: $light-blue;
+    text-decoration: underline;
+  }
+}
+
+.pin{
+  @include sprite($s-pin);
+  transform: translateY(-50%);
+}

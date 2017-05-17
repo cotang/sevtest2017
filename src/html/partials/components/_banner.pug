@@ -1,0 +1,69 @@
+mixin banner()
+
+  +b.SECTION.banner
+    .container
+      .row
+        .col-xs-12.col-lg-7
+          +b.banner-gallery
+            +e.item
+              +e.IMG.img(src="img/banner.jpg", alt="banner")
+              +e.H2.title Техническое диагностирование оборудования, зданий и сооружений, лаборатория неразрушающего контроля
+              +b.A.btn(href="single.html") Подробнее
+            +e.item
+              +e.IMG.img(src="img/banner.jpg", alt="banner")
+              +e.H2.title Техническое диагностирование оборудования, зданий и сооружений, лаборатория неразрушающего контроля
+              +b.A.btn(href="single.html") Подробнее
+            +e.item
+              +e.IMG.img(src="img/banner.jpg", alt="banner")
+              +e.H2.title Техническое диагностирование оборудования, зданий и сооружений, лаборатория неразрушающего контроля
+              +b.A.btn(href="single.html") Подробнее
+
+        .col-xs-12.col-lg-5
+          +b.banner-form
+            +e.H2.title Бесплатная консультация
+            // MCC form cert
+            form(action='', method='', class="mcc-form")
+              table
+                tbody
+                  tr
+                    td.mcc-label.mcc-label-name_of_product
+                      div
+                        | Наименование продукции:
+                        span.mcc-required *
+                    td.mcc-value.mcc-value-name_of_product
+                      input#mcc_name_of_product.mcc-text.mcc-form-input(name='mcc_name_of_product', type='text', value='', maxlength='255')
+                  tr
+                    td.mcc-label.mcc-label-name
+                      div
+                        | Ваше имя:
+                        span.mcc-required *
+                    td.mcc-value.mcc-value-name
+                      input#mcc_name.mcc-text.mcc-form-input(name='mcc_name', type='text', value='')
+                  tr
+                    td.mcc-label.mcc-label-email
+                      div
+                        | Ваш e-mail:
+                        span.mcc-required *
+                    td.mcc-value.mcc-value-email
+                      input#mcc_email.mcc-text.mcc-form-input(name='mcc_email', type='text', value='')
+                  tr
+                    td.mcc-label.mcc-label-phone
+                      div
+                        | Контактный телефон:
+                    td.mcc-value.mcc-value-phone
+                      input#mcc_phone.mcc-text.mcc-form-input(name='mcc_phone', type='text', value='', maxlength='30')
+                  tr
+                    td.mcc-label.mcc-label-captchacode(style='display: none;')
+                    td.mcc-captcha.mcc-value-captcha
+                      div
+                        #mcc_captcha_block.mcc_captcha_block
+                          #recaptcha1.recaptcha
+                            div(style='width: 304px; height: 78px;')
+                              div
+                                iframe(src='https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&hl=ru&v=r20170228102020&size=normal&cb=pfrnyhc7yb61', title='виджет reCAPTCHA', width='304', height='78', frameborder='0', scrolling='no', name='undefined')
+                      .mcc_captcha_block_after
+                  tr
+                    td.mcc-label(style='display: none;')
+                      //
+                    td
+                      input.mcc-submit(type='submit', name='mcc_submit', value='Заказать документ')

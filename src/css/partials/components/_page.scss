@@ -1,0 +1,48 @@
+.page{
+  &--front-page{
+    .news-section{
+      text-align: left;
+      @include mq($from:xs, $until:lg){
+        text-align: center;
+      }
+      &__title{
+        padding-bottom: 20px;
+      }
+    }
+    .faq-section{
+      text-align: left;
+    }
+    .services{
+      padding-bottom: 0;
+    }
+  }
+  &--faq{
+    .faq-item{
+      margin: 40px 0;
+    }
+  }
+  &--news{
+    .news-item{
+      margin: 40px 0;
+      &__text{
+        padding-bottom: 20px;
+      }
+      &__date{
+        background-color: transparent;
+      }
+      &__link{
+        margin-bottom: 20px;
+        margin-left: 20px;
+      }
+    }
+  }
+  &--reviews{
+    .reviews{
+      padding-bottom: 0;
+      &__title{
+        padding-top: 40px;
+        background-color: $grey-bg;
+      }
+    }
+  }
+}
