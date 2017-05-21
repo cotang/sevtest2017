@@ -47,8 +47,7 @@ mixin footer()
 
           +b.footer-contacts(itemscope, itemtype="http://schema.org/ContactPoint")
             +e.column
-              +e.name-wrapper
-                +e.A.name(href="#", itemprop="areaServed") Санкт-Петербург
+              +e.SPAN.name(href="#", itemprop="areaServed") Санкт-Петербург
               +e.address ул. Яблочкова, д. 12, лит. Ц., оф. 314
               +e.working-hours с 9:30 до 18:00
             +e.column
@@ -59,57 +58,58 @@ mixin footer()
                 +e.A.email(href="mailto:otdel@rostest.net", target="_blank", itemprop="email") spb@sevtest.ru
 
         .col-xs-12.col-lg-4
-          // MCC form call
-          form#mcccform.mcc-form.mcc-form-order-call(method='post', action='')
-            input(type='hidden', name='mcc', value='1')
-            input(type='hidden', value='call', name='mcc_form')
-            input(type='hidden', value='0', name='counter')
-            input(type='hidden', value='new', name='mcc_algoritm')
-            table
-              tbody
-                tr
-                  td.mcc-label.mcc-label-name
-                    div
-                      | Ваше имя:
-                      span.mcc-required *
-                  td.mcc-value.mcc-value-name
-                    input#mcc_name.mcc-text.mcc-form-input(name='mcc_name', type='text', value='', maxlength='255')
-                tr
-                  td.mcc-label.mcc-label-phone
-                    div
-                      | Контактный телефон:
-                      span.mcc-required *
-                  td.mcc-value.mcc-value-phone
-                    input#mcc_phone.mcc-text.mcc-form-input(name='mcc_phone', type='text', value='', maxlength='30')
-                tr
-                  td.mcc-label.mcc-label-time
-                    div Желаемое время звонка
-                  td.mcc-value.mcc-value-time
-                    #mcc_time_block
-                      #mcc_time_block_1.mcc_time_block
-                        input#mcc_time_1.mcc-text.mcc_time_1.hasDatepicker(name='mcc_time_1', type='text', value='с', size='5', maxlength='5')
-                      #mcc_time_block_2.mcc_time_block
-                        input#mcc_time_2.mcc-text.mcc_time_2.hasDatepicker(name='mcc_time_2', type='text', value='до', size='5', maxlength='5')
-                      .mcc_time_clear
-                tr
-                  td.mcc-label.mcc-label-captchacode
-                    //
-                  td.mcc-captcha.mcc-value-captcha
-                    div
-                      #mcc_captcha_block.mcc_captcha_block
-                        #recaptcha1.recaptcha
-                          // <div class="g-recaptcha" data-sitekey="6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX"></div>
-                          div(style='width: 164px; height: 144px;')
-                            div
-                              iframe(src='https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&co=aHR0cDovL3NldnRlc3QucnU6ODA.&hl=ru&v=r20170503135251&size=compact&cb=lz2htg6g4ex6', title='виджет reCAPTCHA', width='164', height='144', frameborder='0', scrolling='no', name='undefined')
-                            textarea#g-recaptcha-response.g-recaptcha-response(name='g-recaptcha-response', style='width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ')
-                        // <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=ru"></script>
-                    .mcc_captcha_block_after
-                tr
-                  td.mcc-label
-                    //
-                  td
-                    input.mcc-submit(type='submit', name='mcc_submit', value='Заказать звонок')
+          +b.SECTION.footer-form
+            +e.H2.title Перезвоните мне
+            // MCC form call
+            form#mcccform.mcc-form.mcc-form-order-call(method='post', action='')
+              input(type='hidden', name='mcc', value='1')
+              input(type='hidden', value='call', name='mcc_form')
+              input(type='hidden', value='0', name='counter')
+              input(type='hidden', value='new', name='mcc_algoritm')
+              table
+                tbody
+                  tr
+                    td.mcc-label.mcc-label-name
+                      div
+                        | Ваше имя:
+                        span.mcc-required *
+                    td.mcc-value.mcc-value-name
+                      input#mcc_name.mcc-text.mcc-form-input(name='mcc_name', type='text', value='', maxlength='255')
+                  tr
+                    td.mcc-label.mcc-label-phone
+                      div
+                        | Контактный телефон:
+                        span.mcc-required *
+                    td.mcc-value.mcc-value-phone
+                      input#mcc_phone.mcc-text.mcc-form-input(name='mcc_phone', type='text', value='', maxlength='30')
+                  tr
+                    td.mcc-label.mcc-label-time
+                      div Желаемое время звонка
+                    td.mcc-value.mcc-value-time
+                      #mcc_time_block
+                        #mcc_time_block_1.mcc_time_block
+                          input#mcc_time_1.mcc-text.mcc_time_1.hasDatepicker(name='mcc_time_1', type='text', value='с', size='5', maxlength='5')
+                        #mcc_time_block_2.mcc_time_block
+                          input#mcc_time_2.mcc-text.mcc_time_2.hasDatepicker(name='mcc_time_2', type='text', value='до', size='5', maxlength='5')
+                        .mcc_time_clear
+                  tr
+                    td.mcc-label.mcc-label-captchacode
+                      //
+                    td.mcc-captcha.mcc-value-captcha
+                      div
+                        #mcc_captcha_block.mcc_captcha_block
+                          #recaptcha1.recaptcha
+                            div(style='width: 304px; height: 78px;')
+                              div
+                                iframe(src='https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&hl=ru&v=r20170228102020&size=normal&cb=lwn8143gk7gg', title='виджет reCAPTCHA', width='304', height='78', frameborder='0', scrolling='no', name='undefined')
+                              textarea#g-recaptcha-response.g-recaptcha-response(name='g-recaptcha-response', style='width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ')
+                          // <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=ru"></script>
+                      .mcc_captcha_block_after
+                  tr
+                    td.mcc-label
+                      //
+                    td
+                      input.mcc-submit(type='submit', name='mcc_submit', value='Заказать звонок')
 
         .col-xs-12
           +b.copyright © 2007—2016 Сертификационный центр «СевТест». Полный спектр услуг в области сертификации

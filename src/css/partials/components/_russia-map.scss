@@ -1,0 +1,82 @@
+.russia-map{
+  background-color: $blue-bg;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  &__title{
+    position: relative;
+    color: $blue;
+    @include font-family('TT Lakes Medium', normal, normal);
+    margin: 10px 0 70px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    &:after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      background-color: $red;
+      height: 1px;
+      width: 170px;
+    }
+  }
+  &__map{
+    height: 540px;
+    width: 1000px;
+    margin: 0 auto;
+    background-image: url(../img/russia-map.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
+  &__pins{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png),
+                      url(../img/pin.png);
+    background-position:  165px 140px,
+                          155px 215px,
+                          120px 260px,
+                          80px 300px,
+                          130px 330px,
+                          190px 250px,
+                          215px 280px,
+                          195px 310px,
+                          260px 290px,
+                          240px 315px,
+                          290px 310px,
+                          280px 330px,
+                          360px 370px,
+                          425px 390px,
+                          500px 390px;
+    background-repeat: no-repeat;
+  }
+  &__link{
+    color: $blue;
+    text-decoration: underline;
+    font-size: 18px;
+    &:hover, &:focus{
+      text-decoration: none;
+    }
+  }
+}
+
+

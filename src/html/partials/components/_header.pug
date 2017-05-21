@@ -17,19 +17,19 @@ mixin header()
                 +e.A.name(href="#", itemprop="areaServed") Санкт-Петербург
                 +e.UL.dropdown
                   +e.item
-                    +e.A.link(href="#", data-email='otdel1@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Москва
+                    +e.A.link(href="#", data-email='otdel1@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="ул. Яблочкова, д. 12, лит. Ц., оф. 314", data-lat="59.907936", data-lng="30.300848") Москва
                   +e.item
-                    +e.A.link(href="#", data-email='otdel2@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Санкт-Петербург
+                    +e.A.link(href="#", data-email='otdel2@rostest.net', data-tel0='+7 (495) 660-30-66', data-tel1='+7 (495) 660-30-66', data-address="ул. Яблочкова, д. 12, лит. Ц., оф. 314 1234213223232", data-lat="57.907936", data-lng="30.300848") Санкт-Петербург
                   +e.item
-                    +e.A.link(href="#", data-email='otdel3@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Краснодар
+                    +e.A.link(href="#", data-email='otdel3@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="ул. Яблочкова, д. 12, лит. Ц., оф. 314 123421", data-lat="59.907936", data-lng="30.300848") Краснодар
                   +e.item
-                    +e.A.link(href="#", data-email='otdel4@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Пермь
+                    +e.A.link(href="#", data-email='otdel4@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="ул. Яблочкова, д. 12, лит. Ц., оф. 314 123421322", data-lat="57.907936", data-lng="30.300848") Пермь
                   +e.item
-                    +e.A.link(href="#", data-email='otdel5@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Сургут
+                    +e.A.link(href="#", data-email='otdel5@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="ул. Яблочкова, д. 12, лит. Ц., оф. 314 1234213223232567567546", data-lat="59.907936", data-lng="30.300848") Сургут
                   +e.item
-                    +e.A.link(href="#", data-email='otdel6@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Уфа
+                    +e.A.link(href="#", data-email='otdel6@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="ул. Яблочкова, д. 12, лит. Ц., оф. 314 13232", data-lat="57.907936", data-lng="30.300848") Уфа
                   +e.item
-                    +e.A.link(href="#", data-email='otdel7@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="111") Курган
+                    +e.A.link(href="#", data-email='otdel7@rostest.net', data-tel0='+7 (495) 660-30-66', data-address="ул. Яблочкова, д. 12, лит. Ц., оф. 314 123421322", data-lat="59.907936", data-lng="30.300848") Курган
               +e.address ул. Яблочкова, д. 12, лит. Ц., оф. 314
               +e.working-hours с 9:30 до 18:00
             +e.column
@@ -46,7 +46,9 @@ mixin header()
             +e.A.link--tw(href="#", title="twitter link")
             +e.A.link--fb(href="#", title="facebook link")
           +b.A.btn(href="#", data-form='call') Позвонить
-          +b.A.btn--white(href="#", data-form='map') На карте
+          +e.btn
+            +b.A.btn--white(href="#", data-form='map') На карте
+            +e.map(data-lat="59.907936", data-lng="30.300848")
 
     +e.nav
       .container
@@ -55,14 +57,19 @@ mixin header()
           +e.UL.list
             li.menu-item
               a(href="page-about.html") О компании
-            li.menu-item
-              a(href="page-services.html") Услуги
+            li.menu-item.menu-item--services
+              a(href="#") Услуги
+              ul.sub-menu
+                li.menu-item
+                  a(href="page-services-docs.html") по типу документов
+                li.menu-item
+                  a(href="page-services-branches.html") по типу отрасли
             li.menu-item
               a(href="page-offers.html") Акции
             li.menu-item
               a(href="page-reviews.html") Отзывы
             li.menu-item
-              a(href="page-faq.html") Полезная информация
+              a(href="page-info.html") Полезная информация
             li.menu-item
               a(href="page-contacts.html") Контакты
             li.menu-item.menu-item--search

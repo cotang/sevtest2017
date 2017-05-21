@@ -9,6 +9,7 @@
 @import "vendor/normalize";
 @import "vendor/mq";
 @import "vendor/slick";
+@import "vendor/_jquery.mCustomScrollbar";
 
 // Abstracts
 @import "partials/abstracts/mixins";
@@ -27,27 +28,30 @@
 @import "partials/components/form";
 @import "partials/components/overlay";
 // @import "partials/components/page-pagination";
-// @import "partials/components/breadcrumbs";
-// @import "partials/components/footer";
+@import "partials/components/footer";
+@import "partials/components/sidebar";
+
 
 @import "partials/components/banner";
 @import "partials/components/docs";
 @import "partials/components/procedure";
 @import "partials/components/clients";
+@import "partials/components/advantages";
+@import "partials/components/managers";
+@import "partials/components/reviews";
+@import "partials/components/news";
+@import "partials/components/faq";
+@import "partials/components/map";
+
+@import "partials/components/not-found";
+
+@import "partials/components/russia-map";
+@import "partials/components/contacts";
+@import "partials/components/offers";
+
+@import "partials/components/services";
+@import "partials/components/glossary";
 
 
-// @import "partials/components/services";
-// @import "partials/components/glossary";
-// @import "partials/components/about-index";
-// @import "partials/components/news";
-// @import "partials/components/faq";
-// @import "partials/components/reviews";
-// @import "partials/components/map";
+@import "partials/components/content";
 
-// @import "partials/components/not-found";
-// @import "partials/components/contacts";
-// @import "partials/components/about";
-// @import "partials/components/team";
-
-// @import "partials/components/content";
-// @import "partials/components/page";

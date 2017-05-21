@@ -1,11 +1,8 @@
-mixin clients()
+mixin clients(title)
 
   +b.SECTION.clients
     .container
-      if index
-        +e.H2.title С нами уже работают те кто себя зарекомендовал
-      else
-        +e.H2.title Наши партнеры
+      +e.H2.title #{title}
       +e.gallery
         - for (var i = 0; i< 2; i++){
           +e.slide

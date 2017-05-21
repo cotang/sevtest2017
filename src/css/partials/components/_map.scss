@@ -1,86 +1,99 @@
 .map{
-  position: relative;
-  min-height: 470px;
-  // height: 470px;
-  &__inner{
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    @include mq($from:xs, $until:md){
-      position: static;
-      height: 300px;
+  padding-top: 40px;
+  text-align: center;
+  &__title{
+    position: relative;
+    color: $blue;
+    @include font-family('TT Lakes Medium', normal, normal);
+    margin: 10px 0 70px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    &:after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      background-color: $red;
+      height: 1px;
+      width: 170px;
     }
   }
-  &__text{
-    @include mq($from:xs, $until:md){
-      background-color: rgba(0,0,0,0.75);
-    }
-  }
-  &__block{
-    width: 30%;
-    @include mq($from:xs, $until:xl){
-      width: 35%;
-    }
-    @include mq($from:xs, $until:md){
-      width: auto;
-    }
+  &__frame{
+    height: 430px;
   }
 }
-.map-contacts{
-  background-color: rgba(0,0,0,0.75);
-  color: $text-white;
-  min-height: 470px;
-  padding: 80px 40px 40px;
-  @include mq($from:xs, $until:lg){
-    padding-top: 40px;
+.map-city{
+  width: 60%;
+  margin: 0 auto 30px;
+  text-align: left;
+  display: flex;
+  color: $blue;
+  @include font-family('Helvetica Medium', normal, normal);
+  font-size: 18px;
+  line-height: 1.555;
+  a{
+    color: $blue;
+    display: block;
   }
-  @include mq($from:xs, $until:md){
-    min-height: initial;
-    background-color: transparent;
+  &__column{
+    flex: 0 0 50%;
   }
-
-  &__title{
-    margin: 0 0 20px;
-    @include font-family('Proxima Nova Light', normal, normal);
-    font-size: $font-size-title;
-    @include mq($from:xs, $until:lg){
-      font-size: $font-size-subtitle;
+  &__name{
+    position: relative;
+    padding-left: 20px;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include sprite($s-map-pin);
     }
   }
   &__address{
-    margin-bottom: 15px;
+    padding-left: 20px;
   }
-  &__time{
-    margin-bottom: 15px;
+  &__working-hours{
+    padding-left: 20px;
   }
-  &__tel-wrapper{
-    margin-bottom: 15px;
-    a{
-      color: $light-blue;
+  &__tel{
+    position: relative;
+    padding-left: 30px;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include sprite($s-map-tel);
+    }
+    &:nth-of-type(2){
+      &:before{
+        @include sprite($s-map-tel2);
+      }
     }
   }
-  &__email-wrapper{
-    margin-bottom: 15px;
-    a{
-      color: $light-blue;
+  &__email{
+    position: relative;
+    padding-left: 30px;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include sprite($s-map-email);
     }
-  }
-  .btn{
-    margin: 20px 0;
-    font-size: $font-size-small;
-  }
-  &__more{
-    display: block;
-    margin-top: 10px;
-    color: $light-blue;
-    text-decoration: underline;
   }
 }
 
 .pin{
-  @include sprite($s-pin);
+  background-image: url(../img/contacts-pin.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 56px;
+  height: 74px;
   transform: translateY(-50%);
+  &--small{
+    transform: scale(0.75);
+  }
 }

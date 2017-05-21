@@ -6,7 +6,7 @@ mixin map()
 
       +b.map-city(itemscope, itemtype="http://schema.org/ContactPoint")
         +e.column
-          +e.A.name(href="#", itemprop="areaServed") Санкт-Петербург
+          +e.SPAN.name(href="#", itemprop="areaServed") Санкт-Петербург
           +e.address ул. Яблочкова, д. 12, лит. Ц., оф. 314
           +e.working-hours с 9:30 до 18:00
         +e.column
@@ -16,4 +16,6 @@ mixin map()
           +e.email-wrapper
             +e.A.email(href="mailto:otdel@rostest.net", target="_blank", itemprop="email") spb@sevtest.ru
 
-    +e.frame(data-lat="", data-lng="")
+    +e.frame(data-lat="59.907936", data-lng="30.300848")
+
+

@@ -1,342 +1,97 @@
-.reviews-section{
-  padding-bottom: 60px;
-  @include mq($from:xs, $until:lg){
-    padding-bottom: 20px;
-  }
-
+.reviews{
+  padding-top: 40px;
+  text-align: center;
+  padding-bottom: 40px;
   &__title{
-    margin: 0;
-    padding: 60px 0 20px;
-    @include font-family('Proxima Nova Light', normal, normal);
-    font-size: $font-size-title;
-    color: $text-black;
-    @include mq($from:xs, $until:lg){
-      padding-top: 20px;
-      text-align: center;
-      font-size: $font-size-subtitle;
-    }
-  }
-  &__gallery{
-    margin: -5px;
     position: relative;
-    .slick-dots{
+    color: $blue;
+    @include font-family('TT Lakes Medium', normal, normal);
+    margin: 10px 0 70px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    &:after{
+      content: '';
       position: absolute;
-      top: 100%;
-      right: 0;
-      padding-left: 0;
-      list-style-type: none;
-      margin: 20px 10px;
-      li{
-        display: inline-block;
-        margin: 0 5px;
-        button{
-          display: block;
-          width: 12px;
-          height: 12px;
-          color: transparent;
-          background-color: $grey-bg;
-          border: none;
-          outline: none;
-          border-radius: 50%;
-          padding: 0;
-        }
-      }
-      li.slick-active{
-        button{
-          background-color: $orange;
-        }
-      }
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      background-color: $red;
+      height: 1px;
+      width: 170px;
     }
   }
-  &__link{
-    display: block;
-    margin: 20px 0;
-    text-decoration: underline;
-  }
-}
-
-
-.reviews-item{
-  &__wrapper{
-    box-shadow: 0px 1px 7px 0px rgba(30, 30, 30, 0.27);
-    border-radius: 3px;
-    margin: 5px;
-  }
-  &__name{
+  &__list{
+    padding-left: 0;
     margin: 0;
-    padding: 20px;
-    @include font-family('Proxima Nova Bold', normal, normal);
-    font-size: $font-size-small;
-    color: $text-black;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item{
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: left;
+    padding: 10px;
+  }
+  &__heading{
+    font-size: 22px;
+    @include font-family('Helvetica Roman', normal, normal);
+    margin: 0;
+    line-height: 2.2;
   }
   &__text{
-    line-height: (24/14);
-    font-size: $font-size-small;
-    background-color: $grey-bg;
-    padding: 30px 40px;
-    position: relative;
-    &:before, &:after{
-      content: '"';
-      position: absolute;
-      color: $text-blue;
-      font-size: 40px;
-    }
-    &:before{
-      top: 10px;
-      left: 20px;
-    }
-    &:after{
-      bottom: 10px;
-      right: 20px;
-    }
-
-    p{
-      margin: 0;
-    }
+    color: #9d9d9d;
+    font-size: 15px;
+  }
+  &__btn{
+    margin-top: 10px;
   }
   &__link{
+    font-size: 20px;
     text-decoration: underline;
-    display: block;
-    margin: 20px 0;
   }
 }
 
-
-.reviews{
-  padding-bottom: 80px;
-  @include mq($from:xs, $until:lg){
-    padding-bottom: 40px;
-  }
-
+.gratitude{
+  padding-top: 50px;
+  text-align: center;
+  padding-bottom: 40px;
   &__title{
-    text-align: center; 
-    margin: 0;
-    padding: 80px 0 10px;
-    @include font-family('Proxima Nova Light', normal, normal);
-    font-size: $font-size-title;
-    color: $text-black;
-    @include mq($from:xs, $until:lg){
-      padding-top: 30px;
-      font-size: $font-size-subtitle;
-    }    
-  }
-  &__block{
-    display: none;
-    margin-bottom: 40px;
-    &:nth-of-type(1), 
-    &:nth-of-type(2), 
-    &:nth-of-type(3){
-      display: block;
-    }
-  }
-  &__link{
-    display: block;
-    padding-top: 20px;
-    text-align: center;
-    text-decoration: underline;
-    @include mq($from:xs, $until:lg){
-      padding-top: 0;
-    }
-  }
-
-
-  &__content{
-    display: flex;
-    flex-direction: column;
-    #mcc_comments_rows_block{
-      order: -1;
-      margin: 30px 0;      
-    }
-    .mcc_comments_row_block{
-      margin: 30px 5px 30px;
-    }
-
-
-    /* mcc form*/
-    .mcc-form{
-      background-color: $grey-bg;
-      padding-bottom: 40px;
-      table{
-        display: block;
-        max-width: 640px;
-        margin: 0 auto;
-      }
-      tbody{
-        display: flex;
-        flex-wrap: wrap;
-        @include mq($from:xs, $until:lg){
-          align-items: flex-end;
-        }
-      }
-      tr{
-        text-align: left;
-        flex: 0 0 50%;
-        max-width: 50%;
-        display: block;
-        margin: 15px 0 0;
-        padding: 0 10px;
-        @include mq($from:xs, $until:md){
-          flex: 0 0 100%;
-          max-width: 100%;
-          margin: 5px 0;
-        }
-        &:nth-of-type(1){
-          order: -2;
-        }
-        &:nth-of-type(3){
-          order: -1;
-        }
-
-
-        &:nth-last-of-type(2){
-          @include mq($from:xs, $until:md){
-            margin: 15px 0;
-          }
-        }      
-
-        &:nth-last-of-type(1), &:nth-last-of-type(2), &:nth-of-type(2){
-          flex: 0 0 100%;
-          max-width: 100%;
-        }
-        &:last-of-type{
-          td{
-            text-align: center;     
-            input[type="submit"]{
-              display: inline-block;
-              text-align: center;
-              border: none;
-              outline: none;
-              border-radius: 20px; 
-              text-transform: uppercase;
-              color: $text-white;
-              background-color: $blue;
-              padding: 10px 20px;
-              margin: 0;
-              &:hover, &:focus, &:active{
-                background-color: $light-blue;
-              }
-            }
-          }
-        }
-      }
-      td{
-        display: block;
-        &:first-of-type{
-          margin-bottom: 10px;
-        }
-      }
-      input[type="text"], textarea{
-        border: 1px solid #b9b9b9;
-        color: $text-color;
-        border-radius: 3px;
-        background-color: transparent;
-        padding: 10px 10px;    
-
-        &::-webkit-input-placeholder{
-          color: $text-color;         
-        }       
-        &::placeholder{
-          color: $text-color;         
-        }
-        &:focus::-webkit-input-placeholder{
-          color: transparent;         
-        }       
-        &:focus::placeholder{
-          color: transparent;         
-        } 
-      }
-      textarea{
-        border-radius: 3px;
-        vertical-align: top;
-        color: $text-color;
-        background-color: transparent;
-        padding: 10px 10px;    
-        border: 1px solid #b9b9b9;
-        line-height: normal;
-
-        &::-webkit-input-placeholder{
-          color: $text-color;        
-        }       
-        &::placeholder{
-          color: $text-color;         
-        }
-        &:focus::-webkit-input-placeholder{
-          color: transparent;         
-        }       
-        &:focus::placeholder{
-          color: transparent;         
-        } 
-      } 
-
-      .mcc-text{
-        width: 100%;
-      }
-      .mcc-label{
-        @include mq($from:xs, $until:xl){
-          font-size: 0.9em;
-        }
-      }
-      .mcc-form-textarea{
-        // height: 40px;
-      }
-      .recaptcha > div{
-        margin: 0 auto;
-      }
-    }
-  }
-}
-
-
-
-.mcc_comments_row_block{
-  box-shadow: 0px 1px 7px 0px rgba(30, 30, 30, 0.27);
-  border-radius: 3px;
-  margin: 5px;
-  h2{
-    display: none;
-  }
-  p{
-    margin: 0;
-  }
-}
-.mcc_comments_row_company_title{
-  display: none;
-}
-.mcc_comments_row_company{
-  .mcc_comments_row_company_value{
-    display: block;
-    margin: 0;
-    padding: 20px;
-    @include font-family('Proxima Nova Bold', normal, normal);
-    font-size: $font-size-small;
-    color: $text-black;
-  }      
-}
-
-.mcc_comments_row_comment_title{
-  display: none;
-}
-.mcc_comments_row_comment{
-  .mcc_comments_row_company_value{
-    display: block;
-    line-height: (24/14);
-    font-size: $font-size-small;
-    background-color: $grey-bg;
-    padding: 30px 40px;
     position: relative;
-    &:before, &:after{
-      content: '"';
-      position: absolute;
-      color: $text-blue;
-      font-size: 40px;
-    }
-    &:before{
-      top: 10px;
-      left: 20px;
-    }
+    color: $blue;
+    @include font-family('TT Lakes Medium', normal, normal);
+    margin: 10px 0 50px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
     &:after{
-      bottom: 10px;
-      right: 20px;
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      background-color: $red;
+      height: 1px;
+      width: 170px;
     }
-  } 
+  }
+  &__pics{
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  &__item{
+    &:hover, &:focus{
+      cursor: pointer;
+    }
+  }
+  &__img{
+    img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
 }

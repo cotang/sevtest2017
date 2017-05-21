@@ -1,0 +1,45 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--news
+    .container
+      .row
+        .col-xs-12.col-lg-9
+          // Content news
+          +b.SECTION.content-news
+            .container
+              +e.H2.title Новости отрасли
+              .row
+                - for (var i = 0; i< 6; i++){
+                  +b.news-item.col-xs-12.col-lg-4
+                    +e.inner
+                      +e.date 29.06.16
+                      +e.H3.title
+                        a(href="single-news.html") Зимние горки будут сертифицироваться на основании нового государственного стандарта
+                      +e.text Руководитель Федерального агентства по техническому регулированию и метрологии (Росстандарт) Алексей Абрамов подписал приказ, согласно которому с 1 марта 2017 года в силу вступает национальный стандарт  Российской  Федерации  ГОСТ Р «Безопасность устройств для развлечений. Горки зимние. Требования безопасности при эксплуатации» (ГОСТ Р 56987-2016). Данный документ будет использоваться с целью проведения добровольной сертификации подконтрольных сооружений.
+                - }
+                .col-xs-12
+                  +b.page-pagination
+                    nav.navigation.pagination(role='navigation')
+                      .nav-links
+                        span.page-numbers.current 1
+                        a.page-numbers(href='#') 2
+                        a.page-numbers(href='#') 3
+                        a.page-numbers(href='#') 4
+                        a.page-numbers(href='#') 5
+                        span.page-numbers.dots …
+                        a.page-numbers(href='#') 44
+
+        .col-xs-12.col-lg-3
+          // Sidebar
+          +sidebar()
+
+    // Docs
+    +docs()
+    // Clients
+    +clients()
+
+
+
+
+

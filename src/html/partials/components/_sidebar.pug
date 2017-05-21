@@ -1,8 +1,8 @@
 mixin sidebar()
 
-  // Sidebar
-  +b.ASIDE.sidebar
-    +e.form
+  +b.ASIDE.sidebar--static
+    +b.sidebar-form
+      +e.H3.title Бесплатная консультация
       // MCC form cert
       form(action='', method='', class="mcc-form")
         table
@@ -35,14 +35,18 @@ mixin sidebar()
               td.mcc-value.mcc-value-phone
                 input#mcc_phone.mcc-text.mcc-form-input(name='mcc_phone', type='text', value='', maxlength='30')
             tr
-              td.mcc-label.mcc-label-captchacode(style='display: none;')
+              td.mcc-label.mcc-label-captchacode
+                //
               td.mcc-captcha.mcc-value-captcha
                 div
                   #mcc_captcha_block.mcc_captcha_block
                     #recaptcha1.recaptcha
-                      div(style='width: 304px; height: 78px;')
+                      // <div class="g-recaptcha" data-sitekey="6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX"></div>
+                      div(style='width: 164px; height: 144px;')
                         div
-                          iframe(src='https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&co=aHR0cDovL3Rlc3RzcGIucnU6ODA.&hl=ru&v=r20170228102020&size=normal&cb=pfrnyhc7yb61', title='виджет reCAPTCHA', width='304', height='78', frameborder='0', scrolling='no', name='undefined')
+                          iframe(src='https://www.google.com/recaptcha/api2/anchor?k=6LeAaiYTAAAAADEv2Lz3Mb--6fmLFt97M9JIJ0xX&co=aHR0cDovL3NldnRlc3QucnU6ODA.&hl=ru&v=r20170503135251&size=compact&cb=v2jrfdemrw5f', title='виджет reCAPTCHA', width='164', height='144', frameborder='0', scrolling='no', name='undefined')
+                        textarea#g-recaptcha-response.g-recaptcha-response(name='g-recaptcha-response', style='width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; ')
+                    // <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=ru"></script>
                 .mcc_captcha_block_after
             tr
               td.mcc-label(style='display: none;')
@@ -54,12 +58,15 @@ mixin sidebar()
       +e.H3.title Ваш менеджер
       +e.content
         +e.img
-          img(src="", alt="")
+          img(src="img/manager.jpg", alt="")
         +e.text
           +e.name Наталья
           +e.position менеджер
           +e.A.icq(href= "http://www.icq.com/whitepages/cmd.php?uin=111222333&action=message") 111-222-333
           +e.A.skype(href="skype:skype01") irina-irina
       +e.link(href="#") Все менеджеры
+
+
+
 
 

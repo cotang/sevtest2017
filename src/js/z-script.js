@@ -10,20 +10,34 @@ jQuery(document).ready(function($){
       $(this).fadeOut();
       $(this).closest('.city__name-wrapper').find('.city__name').removeClass('city__name--active');
   });
+
+  var headerCoords=[$('.header__map').data('lat'), $('.header__map').data('lng')];
+  console.log(headerCoords);
   /* изменение названия, телефона и почты при выборе города */
   $('.city__link').on('click', function(){
+      headerCoords = [$(this).data('lat'), $(this).data('lng')];
+
       $(this).closest('.city__name-wrapper').find('.city__name').html($(this).html());
+      $('.footer-contacts__name').html($(this).html());
+
+      $(this).closest('.city').find('.city__address').html($(this).data("address"));
+      $('.footer-contacts__address').html($(this).data("address"));
 
       $(this).closest('.city').find('.city__email-wrapper')
           .html('<a target="_blank" class="city__email" href="mailto:'+$(this).data("email")+'">'+$(this).data("email")+'</a>');
-
-      $(this).closest('.city').find('.city__address').html($(this).data("address"));
+      $('.footer-contacts__email-wrapper')
+          .html('<a target="_blank" class="footer-contacts__email" href="mailto:'+$(this).data("email")+'">'+$(this).data("email")+'</a>');
 
       $(this).closest('.city').find('.city__tel-wrapper')
           .html('<a target="_blank" class="city__tel" href="tel:'+$(this).data("tel0")+'">'+$(this).data("tel0")+'</a>');
+      $('.footer-contacts__tel-wrapper')
+          .html('<a target="_blank" class="footer-contacts__tel" href="tel:'+$(this).data("tel0")+'">'+$(this).data("tel0")+'</a>');
 
       if ($(this).data("tel1") !== undefined) {
-          $(this).closest('.nav-sec').find('.mob').append(', <a target="_blank" href="tel:'+$(this).data("tel1")+'">'+$(this).data("tel1")+'</a>');
+          $(this).closest('.city').find('.city__tel-wrapper')
+            .append(', <a target="_blank" class="city__tel" href="tel:'+$(this).data("tel1")+'">'+$(this).data("tel1")+'</a>');
+          $('.footer-contacts__tel-wrapper')
+            .append(', <a target="_blank" class="footer-contacts__tel" href="tel:'+$(this).data("tel1")+'">'+$(this).data("tel1")+'</a>');
       }
       $('.city__dropdown').hide();
       $(this).closest('.city__name-wrapper').find('.city__name').removeClass('city__name--active');
@@ -62,25 +76,33 @@ jQuery(document).ready(function($){
       slidesToShow: 5,
       slidesToScroll: 1,
       centerMode: true,
-      centerPadding: '15px'
+      centerPadding: '15px',
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
     });
   }
 
   function cssSlider() {
+    $('.clients__gallery .slick-slide').css({'margin': '20px 0 20px', 'z-index': 0, 'left': 0, 'right': 0 });
+    $('.clients__gallery .slick-slide').find('.clients__logo').css({'padding': '0', 'margin-left': '0'});
 
-    $('.slick-slide').css({'margin': '20px 0 40px', 'z-index': 0, 'left': 0, 'right': 0 });
-    $('.slick-slide').find('.clients__logo').css({'padding': '0', 'margin-left': '0'});
+    $('.clients__gallery .slick-current').css({'margin': '0 0 0', 'z-index': 3, 'left': 0, 'right': 0 });
+    $('.clients__gallery .slick-current').find('.clients__logo').css({'padding': '20px', 'margin-left': '-20px'});
 
-    $('.slick-current').css({'margin': '0 0 40px', 'z-index': 3, 'left': 0, 'right': 0 });
-    $('.slick-current').find('.clients__logo').css({'padding': '20px', 'margin-left': '-20px'});
+    $('.clients__gallery .slick-current').prev().css({'margin': '10px 0 10px', 'z-index': 2, 'left': 0, 'right': 0});
+    $('.clients__gallery .slick-current').prev().find('.clients__logo').css({'padding': '10px', 'margin-left': '-10px'});
+    $('.clients__gallery .slick-current').next().css({'margin': '10px 0 10px', 'z-index': 2, 'left': 0, 'right': 0});
+    $('.clients__gallery .slick-current').next().find('.clients__logo').css({'padding': '10px', 'margin-left': '-10px'});
 
-    $('.slick-current').prev().css({'margin': '10px 0 40px', 'z-index': 2, 'left': 0, 'right': 0});
-    $('.slick-current').prev().find('.clients__logo').css({'padding': '10px', 'margin-left': '-10px'});
-    $('.slick-current').next().css({'margin': '10px 0 40px', 'z-index': 2, 'left': 0, 'right': 0});
-    $('.slick-current').next().find('.clients__logo').css({'padding': '10px', 'margin-left': '-10px'});
-
-    $('.slick-current').prev().prev().prev().css({'right': '30px', 'left': 'auto'});
-    $('.slick-current').next().next().next().css({'left': '30px', 'right': 'auto'});
+    $('.clients__gallery .slick-current').prev().prev().prev().css({'right': '30px', 'left': 'auto'});
+    $('.clients__gallery .slick-current').next().next().next().css({'left': '30px', 'right': 'auto'});
   }
   function allSlider(){
     initSlider();
@@ -93,47 +115,65 @@ jQuery(document).ready(function($){
     cssSlider();
   });
 
+  /* табы в advantages */
+  $('.choise-link').click(function(e) {
+      e.preventDefault();
+      $(this).closest('.advantages__list').find('.advantages__item').removeClass('advantages__item--active');
+      $(this).closest('.advantages__item').addClass('advantages__item--active');
 
+      $(this).closest('.advantages__banner').find('.advantages__img').hide();
+      $( $(this.hash) ).show();
+  });
 
-  // /* табы в услугах */
-  // $('.services__link').click(function(e) {
-  //     e.preventDefault();
-  //     $(this).closest('.services__switcher').find('.services__link').removeClass('services__link--active');
-  //     $(this).addClass('services__link--active');
-  //     $(this).closest('.services').find('.services-type').hide();
-  //     $( $(this.hash) ).show();
-  // });
+  /* галерея news */
+  $('.other-news__gallery').slick({
+    infinite: true,
+    dots: false,
+    arrows: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '0'
+  });
 
-  // /* галерея "партнеры" */
-  // $('.clients-section__gallery').slick({
-  //   infinite: true,
-  //   dots: true,
-  //   arrows: false,
-  //   slidesToShow: 2,
-  //   slidesToScroll: 1,
-  //   centerMode: true,
-  //   centerPadding: '0',
-  //   responsive: [
-  //     {
-  //       breakpoint: 768,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1
-  //       }
-  //     }
-  //   ]
-  // });
+  /* Gratitude letter in the modal window */
+  $('.gratitude__img').click( function(e){
+    e.preventDefault();
+    $('body').css({"overflow":"hidden"});
+    $('.overlay').show();
+    $(this).clone().appendTo($('.overlay'))
+    .show()
+    .animate({opacity: 1}, 200);
+  });
+  /* Close the modal window */
+  $('.overlay').click( function(){
+    $('body').css({"overflow":"auto"});
+    $(this).find('.gratitude__img')
+      .animate({opacity: 0}, 200,
+        function(){
+          $(this).remove();
+          $('.overlay').fadeOut(400);
+        }
+      );
+  });
 
-  // /* галерея "отзывы" */
-  // $('.reviews-section__gallery #mcc_comments_rows_block').slick({
-  //   infinite: true,
-  //   dots: true,
-  //   arrows: false,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   centerMode: true,
-  //   centerPadding: '0'
-  // });
+  /* submenu в services */
+  $('.services__list > .menu-item').mouseenter(function(e) {
+      e.preventDefault();
+      $(this).children('.sub-menu').slideDown();
+  });
+  $('.services__list > .menu-item').mouseleave(function(e) {
+      e.preventDefault();
+      $(this).children('.sub-menu').slideUp();
+  });
+
+  /* scrollbar */
+    // (function($){
+    //     $(window).on("load",function(){
+    //         $(".reglaments__text").mCustomScrollbar();
+    //     });
+    // })(jQuery);
+
 
   // /* Form in modal window */
   // $('*[data-form]').click( function(e){
@@ -152,23 +192,6 @@ jQuery(document).ready(function($){
   //   $(this).closest('.overlay').fadeOut(400);
   // });
 
-
-  // $('.team__link').click(function(e) {
-  //     e.preventDefault();
-  //     $(this).closest('.team').find('.team__manager').show();
-  //     $(this).hide();
-  // });
-  // $('.reviews__link').click(function(e) {
-  //     e.preventDefault();
-  //     $(this).closest('.reviews').find('.reviews__block').show();
-  //     $(this).hide();
-  // });
-  // $('.clients__link').click(function(e) {
-  //     e.preventDefault();
-  //     $(this).closest('.clients').find('.clients__item').show();
-  //     $(this).hide();
-  // });
-
   // $('.hamburger').click(function(e) {
   //     e.preventDefault();
   //     $(this).closest('.header').find('.nav__list').toggle();
@@ -184,68 +207,145 @@ jQuery(document).ready(function($){
 
   /* wordpress */
     jQuery(".recaptcha").data("capsize", "normal");
-
+    jQuery(".nav .menu-item--services > a").attr("href", "javascript:void(0);");
     jQuery(".mcc-form-textarea").attr("rows", 1);
     jQuery(".reviews textarea.mcc-text").attr("rows", 5);
+
+    jQuery("<span class='mcc-new-text'>Желаемое время звонка</span>").prependTo("#mcc_time_block");
 
     /* mcc recaptcha */
     // jQuery('.sidebar .recaptcha').data('capsize','normal')
 
     /* mcc forms - placeholders */
-    /* application */
-    jQuery('.banner-form .mcc-form input').each(function() {
+    var myForm = jQuery('.banner-form, .footer-form, .sidebar-form');
+    myForm.find('.mcc-form input').each(function() {
       var e = jQuery(this);
       var text = e.closest('.mcc-value').prev('.mcc-label').find('div').text();
       text = text.replace(/\s+/g,' ');
       e.attr('placeholder',text);
       e.closest('.mcc-value').prev('.mcc-label').hide();
     });
-    /* forms */
-    var myForm = jQuery('.form--review, .form-question-section');
-    myForm.find('.mcc-form input, .mcc-form textarea').each(function() {
-      var e = jQuery(this);
-      var text = e.closest('tr').find('.mcc-label').text();
-      text = text.replace(/\s+/g,' ');
-      e.attr('placeholder',text);
-      myForm.find('table tr').find('td:first').hide();
-    });
     /* end for wordpress */
 
 
+    function initMap(block) {
+      /* Map */
+      $(block).each(function (index, Element) {
+        var coordLat = $(this).data('lat');
+        var coordLng = $(this).data('lng');
+        var map = new GMaps({
+          el: Element,
+          lat: coordLat,
+          lng: coordLng,
+          scrollwheel: false
+        });
+        map.drawOverlay({
+          lat: coordLat,
+          lng: coordLng,
+          content: '<div class="pin"></div>'
+        });
+      });
+    }
+    initMap($('.map__frame'));
+    initMap($('#contacts-map'));
+    // initMap($('.header__map'));
 
-  /* end for wordpress */
+    /* page-contacts - города */
+    $('.contacts__item').click(function(e) {
+        e.preventDefault();
+        $(this).closest('.contacts__list').find('.contacts__item').removeClass('contacts__item--active');
+        $(this).addClass('contacts__item--active');
+        /* Map */
+        var coordLat = $(this).data('lat');
+        var coordLng = $(this).data('lng');
+        $('#contacts-map').each(function (index, Element) {
+          var map = new GMaps({
+            el: Element,
+            lat: coordLat,
+            lng: coordLng,
+            scrollwheel: false
+          });
+          map.drawOverlay({
+            lat: coordLat,
+            lng: coordLng,
+            content: '<div class="pin"></div>'
+          });
+        });
+    });
+
+    /* header - btn - map */
+    $('.btn--white').click(function(e) {
+        e.preventDefault();
+        $(this).closest('.header__btn').find('.header__map').show();
+        /* Map */
+        var coordLat = headerCoords[0];
+        var coordLng = headerCoords[1];
+
+        // initMap($('.header__map'));
+        $('.header__map').each(function (index, Element) {
+          var map = new GMaps({
+            el: Element,
+            lat: coordLat,
+            lng: coordLng,
+            scrollwheel: false
+          });
+          map.drawOverlay({
+            lat: coordLat,
+            lng: coordLng,
+            content: '<div class="pin pin--small"></div>'
+          });
+        });
+    });
+
+    $(document).mouseup(function (e){
+      var div = $(".header__map");
+      if (!div.is(e.target) && div.has(e.target).length === 0) {
+        div.hide();
+      }
+    });
 
 
 
 
 
+    /* Sticky and absolute form in sidebar */
+    if ($('.sidebar') != null) {
+      var sidebarForm = $('.sidebar');
+      var sidebarFormTop = sidebarForm.offset().top;
+      var sidebarFormLeft = sidebarForm.offset().left;
+      var sidebarFormWidth = sidebarForm.width();
+      var sidebarFormOuterHeight = sidebarForm.outerHeight(true);
 
-    // /* Map */
-    // var map = new GMaps({
-    //     el: '.map__inner',
-    //     lat: 59.971198,
-    //     lng: 30.315121,
-    //     scrollwheel: false
-    // });
-    // map.drawOverlay({
-    //     lat: 59.971198,
-    //     lng: 30.315121,
-    //     content: '<div class="pin"></div>'
-    // });
+      var sidebarColumn = sidebarForm.parent();
+      var sidebarColumnBottom = sidebarFormTop + sidebarColumn.outerHeight(true);
 
+      var sidebarFormAbsolute = sidebarColumnBottom - sidebarFormOuterHeight;
 
-    //  /* Map - page contacts */
-    // var map = new GMaps({
-    //     el: '.contacts__map',
-    //     lat: 59.971198,
-    //     lng: 30.315121,
-    //     scrollwheel: false
-    // });
-    // map.drawOverlay({
-    //     lat: 59.971198,
-    //     lng: 30.315121,
-    //     content: '<div class="pin"></div>'
-    // });
+      // console.log(sidebarFormTop);
+      // console.log(sidebarColumn);
+      // console.log(sidebarColumn[0].clientHeight);
+      // console.log(sidebarColumn.outerHeight(true));
+      // console.log(sidebarColumnBottom);
+
+      if ($(window).width() > 1024) {
+        if (sidebarForm.outerHeight(true) < sidebarColumn.outerHeight(true)) {
+          $(window).scroll(function () {
+            if ($(this).scrollTop() >= sidebarFormAbsolute /* - 27 */ ) {
+              $(sidebarForm).removeClass('sidebar--sticky');
+              $(sidebarForm).addClass('sidebar--absolute');
+              $(sidebarForm).css({"width":sidebarFormWidth, "left":"15px"});
+            } else if ($(this).scrollTop() >= sidebarFormTop ) {
+              $(sidebarForm).removeClass('sidebar--static sidebar--absolute');
+              $(sidebarForm).addClass('sidebar--sticky');
+              $(sidebarForm).css({"width":sidebarFormWidth, "left":sidebarFormLeft});
+            } else {
+              $(sidebarForm).removeClass('sidebar--sticky');
+              $(sidebarForm).addClass('sidebar--static');
+            }
+          });
+        }
+      }
+    }
 
 
 

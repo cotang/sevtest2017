@@ -1,26 +1,39 @@
 .not-found{
   text-align: center;
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
   &__title{
-    color: $text-blue;
-    @include font-family('Proxima Nova Regular', normal, normal);
+    color: $link-color;
+    @include font-family('Helvetica Heavy', normal, normal);
     margin: 20px 0 40px;
-    font-size: $font-size;
+    font-size: 56px;
+    line-height: 1;
+    span{
+      display: block;
+      font-size: 178px;
+    }
   }
   &__text{
-    line-height: (24/16);
-    max-width: 50%;
-    margin: 0 auto 20px;
-    @include mq($from:xs, $until:lg){
-      max-width: 100%;
-    }
+    color: #595c93;
+    @include font-family('Helvetica Medium', normal, normal);
+    font-size: 28px;
+    width: 60%;
+    margin: 0 auto;
+  }
+  &__btn{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+    @include font-family('Helvetica Light', normal, normal);
+    color: $blue;
+    display: inline-block;
+    padding: 0 20px;
 
-    a{
-      display: block;
-      margin: 10px 0;
-      color: $text-black;
-      @include font-family('Proxima Nova Bold', normal, normal);
+    .btn{
+      margin-left: 20px;
+      @include font-family('Helvetica Roman', normal, normal);
+      padding: 10px 30px;
+      font-size: 20px;
     }
   }
 }

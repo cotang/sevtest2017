@@ -1,0 +1,76 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--info
+    .container
+      .row
+        .col-xs-12.col-lg-9
+          // Glossary
+          +b.SECTION.glossary
+            +e.text Воспользуйтесь поиском по первой букве вашего товара или услуги
+
+            +e.letters
+              a(href="single-glossary.html") А
+              a(href="single-glossary.html") Б
+              a(href="single-glossary.html") В
+              a(href="single-glossary.html") Г
+              a(href="single-glossary.html") Д
+              a(href="single-glossary.html") Е
+              a(href="single-glossary.html") Ж
+              a(href="single-glossary.html") З
+              a(href="single-glossary.html") И
+              a(href="single-glossary.html") К
+              a(href="single-glossary.html") Л
+              a(href="single-glossary.html") М
+              a(href="single-glossary.html") Н
+              a(href="single-glossary.html") О
+              a(href="single-glossary.html") П
+              a(href="single-glossary.html") Р
+              a(href="single-glossary.html") С
+              a(href="single-glossary.html") Т
+              a(href="single-glossary.html") У
+              a(href="single-glossary.html") Ф
+              a(href="single-glossary.html") Х
+              a(href="single-glossary.html") Ц
+              a(href="single-glossary.html") Ч
+              a(href="single-glossary.html") Ш
+              a(href="single-glossary.html") Щ
+              a(href="single-glossary.html") Ы
+              a(href="single-glossary.html") Э
+              a(href="single-glossary.html") Ю
+              a(href="single-glossary.html") Я
+            +e.text или живым поиском по статьям
+              input(type='text', name='q')
+
+
+            +e.UL.list
+              - for (var i = 0; i< 6; i++){
+                +e.item
+                  +e.H3.title
+                    a(href="single.html") У нас есть свой сертификационный центр
+                  +e.text
+                    p Руководитель Федерального агентства по техническому регулированию и метрологии (Росстандарт) Алексей Абрамов подписал приказ, согласно которому с 1 марта 2017 года в силу вступает национальный стандарт  Российской  Федерации  ГОСТ Р «Безопасность устройств для развлечений. Горки зимние. Требования безопасности при эксплуатации» (ГОСТ Р 56987-2016). Данный документ будет использоваться с целью проведения добровольной сертификации подконтрольных сооружений.
+              - }
+              +b.page-pagination
+                nav.navigation.pagination(role='navigation')
+                  .nav-links
+                    span.page-numbers.current 1
+                    a.page-numbers(href='#') 2
+                    a.page-numbers(href='#') 3
+                    a.page-numbers(href='#') 4
+                    a.page-numbers(href='#') 5
+                    span.page-numbers.dots …
+                    a.page-numbers(href='#') 44
+
+
+        .col-xs-12.col-lg-3
+          // Sidebar
+          +sidebar()
+
+    // Clients
+    +clients()
+
+
+
+
+

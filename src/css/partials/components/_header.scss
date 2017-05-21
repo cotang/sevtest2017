@@ -25,7 +25,21 @@
         @include font-family('Helvetica Light', normal, normal);
       }
     }
-
+  }
+  &__btn{
+    position: relative;
+  }
+  &__map{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    width: 270px;
+    height: 270px;
+    border: 2px solid $blue;
+    background-color: $white;
+    border-radius: 4px;
   }
   &__nav{
     background-color: $blue;

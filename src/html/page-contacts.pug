@@ -1,0 +1,43 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--contacts
+    .container
+      .row
+
+        .col-xs-12.col-lg-3
+          // Contacts
+          +b.SECTION.contacts
+            +e.UL.list
+              +e.item--active(data-lat="57.907936", data-lng="30.300848")
+                +e.H3.name Санкт-Петербург
+                +e.address ул. Яблочкова, д. 12, лит. Ц., оф. 314
+                +e.working-hours с 9:30 до 18:00
+                +e.A.tel(href="tel:+78124935927", target="_blank", itemprop="telephone") +7 (812) 493-59-27
+                +e.A.tel(href="tel:+78129512642", target="_blank", itemprop="telephone") +7 (812) 951-26-42
+                +e.A.email(href="mailto:otdel@rostest.net", target="_blank", itemprop="email") spb@sevtest.ru
+              - for (var i = 0; i< 5; i++){
+                +e.item(data-lat="59.907936", data-lng="30.300848")
+                  +e.H3.name Санкт-Петербург
+                  +e.address ул. Яблочкова, д. 12, лит. Ц., оф. 314
+                  +e.working-hours с 9:30 до 18:00
+                  +e.A.tel(href="tel:+78124935927", target="_blank", itemprop="telephone") +7 (812) 493-59-27
+                  +e.A.tel(href="tel:+78129512642", target="_blank", itemprop="telephone") +7 (812) 951-26-42
+                  +e.A.email(href="mailto:otdel@rostest.net", target="_blank", itemprop="email") spb@sevtest.ru
+              - }
+
+        .col-xs-12.col-lg-6
+          // Contacts-map
+          +b.contacts-map(id="contacts-map", data-lat="57.907936", data-lng="30.300848")
+
+        .col-xs-12.col-lg-3
+          // Sidebar
+          +sidebar()
+
+    // Clients
+    +clients('Наши партнеры')
+
+
+
+
+

@@ -1,0 +1,112 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--services.--services-docs
+    - var pageServices = true
+
+    .container
+      .row
+        .col-xs-12.col-lg-9
+          // Content services
+          +b.SECTION.content-services
+            .container
+              +e.H1.title Выберите услугу
+              +e.text
+                p Обратиться к нашему эксперту и узнайть какой документ вам нужен Обратиться к нашему эксперту и узнайть какой документ вам нужен Обратиться к нашему эксперту и узнайть какой документ вам нужен Обратиться к нашему эксперту и узнайть какой документ вам нужен Обратиться к нашему эксперту и узнайть какой документ вам нужен Обратиться к нашему эксперту и узнайть какой документ вам нужен
+
+          // Services docs
+          +b.SECTION.services--docs
+            +e.H1.title По типу документа:
+            +e.UL.list
+              li.menu-item
+                a(href="#") Сертификация качества
+                ul.sub-menu
+                  li.menu-item
+                    a(href="page.html") Сертификация ГОСТ Р
+                  li.menu-item
+                    a(href="page.html") Сертификат Таможенного Союза
+                  li.menu-item
+                    a(href="page.html") Сертификат соответствия
+                  li.menu-item
+                    a(href="page.html") Сертификат происхождения
+                  li.menu-item
+                    a(href="page.html") Сертификация пожарной безопасности
+              li.menu-item
+                a(href="#") Гигиеническое заключение
+                ul.sub-menu
+                  li.menu-item
+                    a(href="page.html") Сертификация ГОСТ Р
+                  li.menu-item
+                    a(href="page.html") Сертификат Таможенного Союза
+                  li.menu-item
+                    a(href="page.html") Сертификат соответствия
+                  li.menu-item
+                    a(href="page.html") Сертификат происхождения
+                  li.menu-item
+                    a(href="page.html") Сертификация пожарной безопасности
+              li.menu-item
+                a(href="#") Декларация соответствия
+                ul.sub-menu
+                  li.menu-item
+                    a(href="page.html") Сертификация ГОСТ Р
+                  li.menu-item
+                    a(href="page.html") Сертификат Таможенного Союза
+                  li.menu-item
+                    a(href="page.html") Сертификат соответствия
+                  li.menu-item
+                    a(href="page.html") Сертификат происхождения
+                  li.menu-item
+                    a(href="page.html") Сертификация пожарной безопасности
+              li.menu-item
+                a(href="#") Техническая документация
+                ul.sub-menu
+                  li.menu-item
+                    a(href="page.html") Сертификация ГОСТ Р
+                  li.menu-item
+                    a(href="page.html") Сертификат Таможенного Союза
+                  li.menu-item
+                    a(href="page.html") Сертификат соответствия
+                  li.menu-item
+                    a(href="page.html") Сертификат происхождения
+                  li.menu-item
+                    a(href="page.html") Сертификация пожарной безопасности
+              li.menu-item
+                a(href="#") Отмененные документы в сфере сертификации
+                ul.sub-menu
+                  li.menu-item
+                    a(href="page.html") Сертификация ГОСТ Р
+                  li.menu-item
+                    a(href="page.html") Сертификат Таможенного Союза
+                  li.menu-item
+                    a(href="page.html") Сертификат соответствия
+                  li.menu-item
+                    a(href="page.html") Сертификат происхождения
+                  li.menu-item
+                    a(href="page.html") Сертификация пожарной безопасности
+              li.menu-item
+                a(href="#") Базы кодов
+                ul.sub-menu
+                  li.menu-item
+                    a(href="page.html") Сертификация ГОСТ Р
+                  li.menu-item
+                    a(href="page.html") Сертификат Таможенного Союза
+                  li.menu-item
+                    a(href="page.html") Сертификат соответствия
+                  li.menu-item
+                    a(href="page.html") Сертификат происхождения
+                  li.menu-item
+                    a(href="page.html") Сертификация пожарной безопасности
+
+        .col-xs-12.col-lg-3
+          // Sidebar
+          +sidebar()
+
+    // Procedure
+    +procedure()
+    // Reglaments
+    +reglaments()
+    // Clients
+    +clients('Наши партнеры')
+
+
+

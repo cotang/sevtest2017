@@ -1,196 +1,241 @@
 .services{
-  text-align: center;
-  padding-bottom: 80px;
-  @include mq($from:xs, $until:lg){
-    padding-bottom: 40px;
-  }
-
-  &__title{    
-    margin: 0;
-    padding: 60px 0 0px;
-    @include font-family('Proxima Nova Light', normal, normal);
-    font-size: $font-size-title;
-    color: $text-black;
-    @include mq($from:xs, $until:lg){
-      padding-top: 20px;
-      font-size: $font-size-subtitle;
-    }
-  }
-  &__switcher{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  &__content{
-    background-color: $grey-bg;
-    border-radius: 3px;
-    padding: 15px 0;
-    box-shadow: 0px 1px 7px 0px rgba(30, 30, 30, 0.27);
-  }
-  &__link{
-    display: block;
-    padding: 0 10px;
-    text-transform: uppercase;
-    font-size: $font-size-big;
-    color: $text-color;
-    position: relative;
-    @include mq($from:xs, $until:lg){
-      font-size: $font-size;
-    }
-
-    &:before{
-      content: '';
-      display: block;
-      margin: 25px auto;
-    }
-    &:after{
-      content: '';
-      position: absolute;
-      background-color: $grey-bg;
-      width: 100%;
-      height: 2px;
-      left: 0;
-      bottom: 30px;
-    }
-    &:hover, &:focus, &:active{
-      color: $text-blue;
-      text-decoration: none;      
-      &:after{
-        bottom: 28px;
-        height: 5px;
-        background-color: $text-blue;
-      }
-    }
-
-    &--active{
-      color: $text-blue;
-      text-decoration: none;      
-      &:after{
-        bottom: 28px;
-        height: 5px;
-        background-color: $text-blue;
-      }
-    }
-    &--active.services__link--production{
-      &:before{
-        @include sprite($s-offer-production-blue);
-      }
-    }    
-    &--active.services__link--docs{
-      &:before{
-        @include sprite($s-offer-doc-blue);
-      }
-    }
-
-    &--production{
-      &:before{
-        @include sprite($s-offer-production-grey);
-      }
-      &:hover, &:focus, &:active{
-        &:before{
-          @include sprite($s-offer-production-blue);
-        }
-
-      }
-    }
-    &--docs{
-      &:before{
-        @include sprite($s-offer-doc-grey);
-      }
-      &:hover, &:focus, &:active{
-        &:before{
-          @include sprite($s-offer-doc-blue);
-        }
-      }      
-    }
-  }
-}
-
-.services-type{
-  display: none;
-  &:first-of-type{
-    display: block;
+  &__title{
+    text-align: center;
+    color: $blue;
+    @include font-family('Helvetica Bold', normal, normal);
+    margin: 10px 0 30px;
+    font-size: 24px;
   }
   &__list{
     padding-left: 0;
-    margin: 10px 0 0;
+    margin: 0;
     list-style-type: none;
-    columns: 3;
-    text-align: left;
-    @include mq($from:xs, $until:md){
-      columns: 1;
-    }
-
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0 -15px;
     > .menu-item{
-      display: inline-block;
-      vertical-align: top;
-      width: 100%;
+      margin: 0 15px 30px;
+      flex: 0 0 calc(33.3333% - 30px);
+      max-width: calc(33.3333% - 30px);
+      box-shadow: $box-shadow;
+      text-align: center;
+      padding: 150px 0 30px;
+      position: relative;
+      @include transition();
       > a{
-        color: $text-color;
         display: block;
-        padding: 12px 5px 12px 35px;
-        margin: 0 5px 0 30px;
+        color: $blue;
+        @include font-family('Helvetica Bold', normal, normal);
+        // margin: 10px 0 10px;
+        font-size: 24px;
         position: relative;
-        @include mq($from:xs, $until:md){
-          margin-left: 15px;
-        }
-
         &:before{
           content: '';
-          display: block;
           position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          left: 0;
+          left: 50%;
+          bottom: 100%;
+          transform: translate(-50%, -20px);
         }
       }
-    }
-    .sub-menu{
-      padding-left: 60px;
-      margin: 0;
-      list-style-type: none;
-      @include mq($from:xs, $until:md){
-        padding-left: 40px;
-      }
 
-      > .menu-item{
-        > a{
-          color: $text-color;
-          display: block;
-          padding: 10px 5px;
-          margin-left: 20px;
-          text-decoration: underline;
-          @include mq($from:xs, $until:md){
-            margin-left: 5px;
-          }
-        }
-      }
-    }
-  }
-
-
-  &--production{
-    .services-type__list{
-      > .menu-item{
-        > a{
+      > .sub-menu{
+        display: none;
+        @include transition();
+        text-align: left;
+        list-style-type: none;
+        margin-top: 10px;
+        padding-left: 20px;
+        // border: 1px solid #ccc;
+        > .menu-item{
           &:before{
-            @include sprite($s-offer-alcohol-blue);
+            content: '▸';
+            display: inline-block;
+            font-size: 1.3em;
+            margin-right: 0.3em;
+          }
+          > a{
+            color: $grey-text;
+            &:hover, &:focus{
+              color: $red;
+            }
           }
         }
-      } 
-    }   
+      }
+      // &:hover, &:focus{
+      //   > .sub-menu{
+      //     // jQuery used
+      //   }
+      // }
+    }
   }
+
   &--docs{
-    .services-type__list{
+    .services__list{
       > .menu-item{
-        > a{
-          &:before{
-            @include sprite($s-round-minus);
-            width: 24px;
-            height: 24px;
+        &:nth-of-type(1){
+          > a:before{
+            @include sprite($s-services-doc1);
           }
         }
-      } 
-    }   
+        &:nth-of-type(2){
+          > a:before{
+            @include sprite($s-services-doc2);
+          }
+        }
+        &:nth-of-type(3){
+          > a:before{
+            @include sprite($s-services-doc3);
+          }
+        }
+        &:nth-of-type(4){
+          > a:before{
+            @include sprite($s-services-doc4);
+          }
+        }
+        &:nth-of-type(5){
+          > a:before{
+            @include sprite($s-services-doc5);
+          }
+        }
+        &:nth-of-type(6){
+          > a:before{
+            @include sprite($s-services-doc6);
+          }
+        }
+      }
+    }
+  }
+  &--branches{
+    .services__list{
+      > .menu-item{
+        &:nth-of-type(1){
+          > a:before{
+            @include sprite($s-services-branch1);
+          }
+        }
+        &:nth-of-type(2){
+          > a:before{
+            @include sprite($s-services-branch2);
+          }
+        }
+        &:nth-of-type(3){
+          > a:before{
+            @include sprite($s-services-branch3);
+          }
+        }
+        &:nth-of-type(4){
+          > a:before{
+            @include sprite($s-services-branch4);
+          }
+        }
+        &:nth-of-type(5){
+          > a:before{
+            @include sprite($s-services-branch5);
+          }
+        }
+        &:nth-of-type(6){
+          > a:before{
+            @include sprite($s-services-branch6);
+          }
+        }
+        &:nth-of-type(7){
+          > a:before{
+            @include sprite($s-services-branch7);
+          }
+        }
+        &:nth-of-type(8){
+          > a:before{
+            @include sprite($s-services-branch8);
+          }
+        }
+        &:nth-of-type(9){
+          > a:before{
+            @include sprite($s-services-branch9);
+          }
+        }
+        &:nth-of-type(10){
+          > a:before{
+            @include sprite($s-services-branch10);
+          }
+        }
+        &:nth-of-type(11){
+          > a:before{
+            @include sprite($s-services-branch11);
+          }
+        }
+        &:nth-of-type(12){
+          > a:before{
+            @include sprite($s-services-branch12);
+          }
+        }
+        &:nth-of-type(13){
+          > a:before{
+            @include sprite($s-services-branch13);
+          }
+        }
+        &:nth-of-type(14){
+          > a:before{
+            @include sprite($s-services-branch14);
+          }
+        }
+        &:nth-of-type(15){
+          > a:before{
+            @include sprite($s-services-branch15);
+          }
+        }
+        &:nth-of-type(16){
+          > a:before{
+            @include sprite($s-services-branch16);
+          }
+        }
+        &:nth-of-type(17){
+          > a:before{
+            @include sprite($s-services-branch17);
+          }
+        }
+        &:nth-of-type(18){
+          > a:before{
+            @include sprite($s-services-branch18);
+          }
+        }
+        &:nth-of-type(19){
+          > a:before{
+            @include sprite($s-services-branch19);
+          }
+        }
+        // &:nth-of-type(20){
+        //   > a:before{
+        //     @include sprite($s-services-branch20);
+        //   }
+        // }
+      }
+    }
   }
 }
+
+.reglaments{
+  padding: 40px 0;
+  &__title{
+    color: $blue;
+    @include font-family('Helvetica Bold', normal, normal);
+    margin: 10px 0 20px;
+    font-size:24px;
+  }
+  &__text{
+    height: 250px;
+    // overflow-y: scroll;
+
+    .mCSB_scrollTools .mCSB_draggerRail{
+      width: 8px;
+      background-color: #f4f4f4;
+    }
+    .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+      width: 10px;
+      background-color: $red;
+    }
+  }
+}
+
+
+

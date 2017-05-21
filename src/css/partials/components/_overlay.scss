@@ -46,6 +46,7 @@
     }
   }
   &__form{
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -64,76 +65,18 @@
     display: none;
   }
 
-
-
- // /* mcc form*/
- //  .mcc-form{
- //    table{
- //      display: block;
- //    }
- //    tbody{
- //      display: flex;
- //      flex-wrap: wrap;
- //      margin: 0 -10px;
- //    }
- //    tr{
- //      flex: 0 0 50%;
- //      max-width: 50%;
- //      display: block;
- //      margin: 15px 0;
- //      padding: 0 10px;
- //      @include mq($from:xs, $until:md){
- //        flex: 0 0 100%;
- //        max-width: 100%;
- //        margin: 5px 0;
- //      }
- //      &:nth-last-of-type(2){
- //        @include mq($from:xs, $until:md){
- //          margin: 15px 0;
- //        }
- //      }
-
- //      &:nth-last-of-type(1), &:nth-last-of-type(2){
- //        flex: 0 0 100%;
- //        max-width: 100%;
- //      }
- //      &:last-of-type{
- //        td{
- //          text-align: center;
- //          input[type="submit"]{
- //            display: inline-block;
- //            text-align: center;
- //            outline: none;
- //            border: none;
- //            border-radius: 30px;
- //            text-transform: uppercase;
- //            color: $text-white;
- //            background-color: $orange;
- //            padding: 12px 20px;
- //            margin: 0;
- //            &:hover, &:focus, &:active{
- //              background-color: $light-orange;
- //            }
- //          }
- //        }
- //      }
- //    }
- //    td{
- //      display: block;
- //      &:first-of-type{
- //        text-align: left;
- //        margin-bottom: 10px;
- //      }
- //    }
- //    .mcc-text{
- //      width: 100%;
- //      border: 1px solid $orange;
- //    }
- //    .recaptcha > div{
- //      margin: 0 auto;
- //    }
- //  }
-
-
-
+  .gratitude__img{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    border: 1px solid #9d9d9d;
+    img{
+      object-fit:contain
+    }
+  }
 }

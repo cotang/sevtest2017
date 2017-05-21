@@ -1,65 +1,57 @@
-.faq-section{
-  padding-bottom: 60px;
+.faq{
+  padding-top: 40px;
   text-align: center;
-  @include mq($from:xs, $until:lg){
-    padding-bottom: 20px;
-  }
-
-  &__title{    
-    margin: 0;
-    padding: 60px 0 20px;
-    @include font-family('Proxima Nova Light', normal, normal);
-    font-size: $font-size-title;
-    color: $text-black;
-    @include mq($from:xs, $until:lg){
-      text-align: center;
-      padding-top: 30px;
-      font-size: $font-size-subtitle;
-    }
-  }
-  .btn{
-    padding: 15px 30px;
-    border-radius: 30px;
-  }
-}
-.faq-item{
-  text-align: left;
-  &__wrapper{
-    box-shadow: 0px 1px 7px 0px rgba(30, 30, 30, 0.27);
-    border-radius: 3px;
-    padding: 20px;
-  }
+  padding-bottom: 40px;
   &__title{
-    margin: 0 0 20px;
-    @include font-family('Proxima Nova Bold', normal, normal);
-    font-size: $font-size-small;
-    color: $text-black;
-  }
-  &__text{
-    background-color: $grey-bg;
-    padding: 20px;
     position: relative;
+    color: $blue;
+    @include font-family('TT Lakes Medium', normal, normal);
+    margin: 10px 0 50px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
     &:after{
       content: '';
       position: absolute;
-      z-index: -1;
-      bottom: -10px;
-      left: 30px;
-      transform: rotate(45deg);
-      width: 30px;
-      height: 30px;
-      background-color: $grey-bg;
-    }
-    p{
-      margin: 0;
+      left: 50%;
+      bottom: -15px;
+      transform: translateX(-50%);
+      background-color: $red;
+      height: 1px;
+      width: 170px;
     }
   }
-  &__expert{
-    padding: 20px 20px 0;
+  &__btn{
+    margin-top: 10px;
   }
   &__link{
+    font-size: 20px;
     text-decoration: underline;
-    display: block;
-    margin: 20px 0 40px;
+  }
+
+  &__item{
+    text-align: left;
+    padding: 0 70px;
+  }
+  &__question{
+    font-size: 24px;
+    line-height: 1.46;
+    @include font-family('Helvetica Roman', normal, normal);
+    margin: 0 100px 30px 0;
+    background-color: $blue-bg2;
+    border-radius: 20px;
+    padding: 20px 35px;
+  }
+  &__answer{
+    box-shadow: 0px 12px 27px 0px rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+    padding: 20px 30px;
+    @include font-family('Helvetica Light', normal, normal);
+    font-size: 18px;
+    line-height: 1.222;
+    color: #9d9d9d;
+    margin: 0 0 40px 100px;
   }
 }
+
+

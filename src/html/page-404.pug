@@ -1,0 +1,16 @@
+extends partials/templates/_template.pug
+
+block content
+  +b.SECTION.page--not-found
+
+    // Not found
+    +b.SECTION.not-found
+      .container
+        +e.H1.title Ой,
+          span 404
+          | ошибка
+        +e.text
+          p Если у вас еще нет сертификата качества, есть риск возникновения ошибки посерьёзней
+        +e.btn Чтобы избежать этого
+          +b.btn(href="#", data-form="application") Закажите сертификат
+
