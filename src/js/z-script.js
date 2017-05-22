@@ -79,10 +79,11 @@ jQuery(document).ready(function($){
       centerPadding: '15px',
       responsive: [
         {
-          breakpoint: 768,
+          breakpoint: 1280,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            // centerPadding: '25px',
           }
         }
       ]
@@ -90,19 +91,34 @@ jQuery(document).ready(function($){
   }
 
   function cssSlider() {
-    $('.clients__gallery .slick-slide').css({'margin': '20px 0 20px', 'z-index': 0, 'left': 0, 'right': 0 });
-    $('.clients__gallery .slick-slide').find('.clients__logo').css({'padding': '0', 'margin-left': '0'});
 
-    $('.clients__gallery .slick-current').css({'margin': '0 0 0', 'z-index': 3, 'left': 0, 'right': 0 });
-    $('.clients__gallery .slick-current').find('.clients__logo').css({'padding': '20px', 'margin-left': '-20px'});
+    if ($(window).width() >= 1280) {
+      $('.clients__gallery .slick-slide').css({'margin': '20px 0 20px', 'z-index': 0, 'left': 0, 'right': 0 });
+      $('.clients__gallery .slick-slide').find('.clients__logo').css({'padding': '0', 'margin-left': '0'});
 
-    $('.clients__gallery .slick-current').prev().css({'margin': '10px 0 10px', 'z-index': 2, 'left': 0, 'right': 0});
-    $('.clients__gallery .slick-current').prev().find('.clients__logo').css({'padding': '10px', 'margin-left': '-10px'});
-    $('.clients__gallery .slick-current').next().css({'margin': '10px 0 10px', 'z-index': 2, 'left': 0, 'right': 0});
-    $('.clients__gallery .slick-current').next().find('.clients__logo').css({'padding': '10px', 'margin-left': '-10px'});
+      $('.clients__gallery .slick-current').css({'margin': '0 0 0', 'z-index': 3, 'left': 0, 'right': 0 });
+      $('.clients__gallery .slick-current').find('.clients__logo').css({'padding': '20px', 'margin-left': '-20px'});
 
-    $('.clients__gallery .slick-current').prev().prev().prev().css({'right': '30px', 'left': 'auto'});
-    $('.clients__gallery .slick-current').next().next().next().css({'left': '30px', 'right': 'auto'});
+      $('.clients__gallery .slick-current').prev().css({'margin': '10px 0 10px', 'z-index': 2, 'left': 0, 'right': 0});
+      $('.clients__gallery .slick-current').prev().find('.clients__logo').css({'padding': '10px', 'margin-left': '-10px'});
+      $('.clients__gallery .slick-current').next().css({'margin': '10px 0 10px', 'z-index': 2, 'left': 0, 'right': 0});
+      $('.clients__gallery .slick-current').next().find('.clients__logo').css({'padding': '10px', 'margin-left': '-10px'});
+
+      $('.clients__gallery .slick-current').prev().prev().prev().css({'right': '30px', 'left': 'auto'});
+      $('.clients__gallery .slick-current').next().next().next().css({'left': '30px', 'right': 'auto'});
+    } else {
+      $('.clients__gallery .slick-slide').css({'margin': '20px 0 20px', 'z-index': 0, 'left': 0, 'right': 0 });
+      $('.clients__gallery .slick-slide').find('.clients__logo').css({'padding': '0', 'margin-left': '0'});
+
+      $('.clients__gallery .slick-current').prev().css({'right': '40px', 'left': 'auto'});
+      $('.clients__gallery .slick-current').next().css({'left': '40px', 'right': 'auto'});
+    }
+
+
+
+
+
+
   }
   function allSlider(){
     initSlider();
@@ -175,34 +191,39 @@ jQuery(document).ready(function($){
     // })(jQuery);
 
 
-  // /* Form in modal window */
-  // $('*[data-form]').click( function(e){
-  //   e.preventDefault();
-  //   var suffix = $(this).data('form');
-  //   $('body').css({'overflow':'hidden'});
-  //   $('.overlay').show();
-  //   var formClass = '.form--' + suffix;
-  //   $('.overlay').find(formClass).fadeIn();
-  // });
-  // /* Close modal window */
-  // $('.overlay__bg, .overlay__close').click( function(e){
-  //   e.preventDefault();
-  //   $('body').css({'overflow':'auto'});
-  //   $(this).closest('.overlay').find('.form').fadeOut();
-  //   $(this).closest('.overlay').fadeOut(400);
-  // });
+  /* Form in modal window */
+  $('*[data-form]').click( function(e){
+    e.preventDefault();
+    var suffix = $(this).data('form');
+    $('body').css({'overflow':'hidden'});
+    $('.overlay').show();
+    $('.overlay__form').show();
+    var formClass = '.overlay-form--' + suffix;
+    $('.overlay').find(formClass).fadeIn();
+  });
+  /* Close modal window */
+  $('.overlay__bg, .overlay__close').click( function(e){
+    e.preventDefault();
+    $('body').css({'overflow':'auto'});
+    $(this).closest('.overlay').find('.overlay-form').fadeOut();
+    $(this).closest('.overlay__form').fadeOut();
+    $(this).closest('.overlay').fadeOut(400);
+  });
 
-  // $('.hamburger').click(function(e) {
-  //     e.preventDefault();
-  //     $(this).closest('.header').find('.nav__list').toggle();
-  // });
-  // $(window).resize(function(){
-  //   if ($(window).width() > 768) {
-  //     $('.nav__list').show();
-  //   } else {
-  //     $('.nav__list').hide();
-  //   }
-  // });
+  $('.hamburger').click(function(e) {
+      e.preventDefault();
+      $(this).closest('.header__nav').find('.nav__list').slideToggle();
+  });
+
+  $(window).resize(function(){
+    if ($(window).width() > 768) {
+      $('.nav__list').show();
+      $('.nav__hamburger').hide();
+    } else {
+      $('.nav__list').hide();
+      $('.nav__hamburger').show();
+    }
+  });
 
 
   /* wordpress */
@@ -214,7 +235,11 @@ jQuery(document).ready(function($){
     jQuery("<span class='mcc-new-text'>Желаемое время звонка</span>").prependTo("#mcc_time_block");
 
     /* mcc recaptcha */
-    // jQuery('.sidebar .recaptcha').data('capsize','normal')
+    if ($(window).width() < 768) {
+      jQuery('.recaptcha').data('capsize','compact')
+    }
+
+    // jQuery('.recaptcha').data('capsize','normal')
 
     /* mcc forms - placeholders */
     var myForm = jQuery('.banner-form, .footer-form, .sidebar-form');

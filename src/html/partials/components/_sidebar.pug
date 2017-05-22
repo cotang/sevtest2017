@@ -54,9 +54,9 @@ mixin sidebar()
               td
                 input.mcc-submit(type='submit', name='mcc_submit', value='Заказать документ')
 
-    +b.manager
-      +e.H3.title Ваш менеджер
-      +e.content
+    +b.manager-section
+      +b.manager
+        +e.H3.title Ваш менеджер
         +e.img
           img(src="img/manager.jpg", alt="")
         +e.text

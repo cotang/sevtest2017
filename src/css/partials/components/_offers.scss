@@ -1,7 +1,9 @@
 .offers{
-  padding-top: 60px;
+  padding: 60px 0 40px;
   text-align: center;
-  padding-bottom: 40px;
+  @media (max-width: $screen-xl){
+    padding: 20px 0;
+  }
 
   &__btn{
     margin-top: 20px;
@@ -15,6 +17,9 @@
       margin-left: 10px;
       padding: 10px 40px;
       font-size: 18px;
+      @media (max-width: $screen-md){
+        margin: 10px 0 0;
+      }
     }
   }
 }

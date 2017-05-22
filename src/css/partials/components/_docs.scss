@@ -9,6 +9,10 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
+    @media (max-width: $screen-md){
+      margin: 0 0 30px;
+      font-size: 24px;
+    }
     &:after{
       content: '';
       position: absolute;
@@ -47,6 +51,9 @@
     &:hover, &:focus{
       transform: scale(1.2);
       box-shadow: none;
+      @media (max-width: $screen-xl){
+        transform: scale(1.1);
+      }
 
       &:after{
         visibility: visible;
@@ -59,6 +66,9 @@
         border: 3px solid #5b5e91;
       }
     }
+  }
+  &__img{
+    width: 100%;
   }
 
 

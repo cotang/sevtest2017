@@ -1,16 +1,24 @@
 .not-found{
   text-align: center;
-  padding-top: 40px;
-  padding-bottom: 60px;
+  padding: 40px 0 60px;
+  @media (max-width: $screen-md){
+    padding: 20px 0;
+  }
   &__title{
     color: $link-color;
     @include font-family('Helvetica Heavy', normal, normal);
     margin: 20px 0 40px;
     font-size: 56px;
     line-height: 1;
+    @media (max-width: $screen-md){
+      font-size: 30px;
+    }
     span{
       display: block;
       font-size: 178px;
+      @media (max-width: $screen-md){
+        font-size: 80px;
+      }
     }
   }
   &__text{
@@ -19,6 +27,10 @@
     font-size: 28px;
     width: 60%;
     margin: 0 auto;
+    @media (max-width: $screen-md){
+      font-size: 20px;
+      width: 100%;
+    }
   }
   &__btn{
     margin-top: 20px;
@@ -28,12 +40,18 @@
     color: $blue;
     display: inline-block;
     padding: 0 20px;
+    @media (max-width: $screen-md){
+      font-size: 16px;
+    }
 
     .btn{
       margin-left: 20px;
       @include font-family('Helvetica Roman', normal, normal);
       padding: 10px 30px;
       font-size: 20px;
+      @media (max-width: $screen-md){
+        margin: 10px 0 0;
+      }
     }
   }
 }

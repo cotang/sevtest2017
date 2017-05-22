@@ -4,14 +4,14 @@ block content
   +b.SECTION.page--news
     .container
       .row
-        .col-xs-12.col-lg-9
+        .col-xs-12.col-xl-9
           // Content news
           +b.SECTION.content-news
             .container
               +e.H2.title Новости отрасли
               .row
                 - for (var i = 0; i< 6; i++){
-                  +b.news-item.col-xs-12.col-lg-4
+                  +b.news-item.col-xs-12.col-md-6.col-xl-4
                     +e.inner
                       +e.date 29.06.16
                       +e.H3.title
@@ -30,7 +30,7 @@ block content
                         span.page-numbers.dots …
                         a.page-numbers(href='#') 44
 
-        .col-xs-12.col-lg-3
+        .col-xs-12.col-xl-3
           // Sidebar
           +sidebar()
 

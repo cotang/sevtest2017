@@ -1,5 +1,10 @@
 .sidebar{
   padding: 60px 0 30px;
+  @media (max-width: $screen-xl){
+    padding: 20px 0;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
   &--static{
     position: static;
@@ -18,78 +23,17 @@
   }
 }
 
-
-.manager{
+.manager-section{
   text-align: center;
-  padding-top: 20px;
-  &__title{
-    color: #595c93;
-    @include font-family('TT Lakes Medium', normal, normal);
-    margin: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
-    line-height: 2;
-  }
-  &__content{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: left;
-  }
-  &__img{
-    img{
-      border-radius: 50%;
-    }
-  }
-  &__text{
-    @include font-family('TT Lakes Medium', normal, normal);
-    padding: 0 20px;
-  }
-  &__name{
-    color: #333;
-    font-size: 22px;
-  }
-  &__position{
-    color: #9d9d9d;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  &__icq{
-    display: block;
-    color: #2aae54;
-    line-height: (26/12);
-    &:before{
-      content: '';
-      display: inline-block;
-      margin-right: 5px;
-      margin-bottom: -0.2em;
-      @include sprite($s-manager-icq);
-    }
-
-    &:hover, &:focus{
-      text-decoration: underline;
-    }
-  }
-  &__skype{
-    display: block;
-    color: #00aff0;
-    line-height: (26/12);
-    &:before{
-      content: '';
-      display: inline-block;
-      margin-right: 5px;
-      margin-bottom: -0.2em;
-      @include sprite($s-manager-skype);
-    }
-
-    &:hover, &:focus{
-      text-decoration: underline;
-    }
-  }
-
   &__link{
-    display: inline-block;
+    display: block;
     margin-top: 10px;
     font-size: 18px;
     text-decoration: underline;
+  }
+  .manager__text{
+    @media (max-width: $screen-md){
+      padding: 0 20px;
+    }
   }
 }

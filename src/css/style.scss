@@ -7,7 +7,7 @@
 @import "partials/abstracts/variables";
 @import "partials/abstracts/bootstrap-flex";
 @import "vendor/normalize";
-@import "vendor/mq";
+// @import "vendor/mq";
 @import "vendor/slick";
 @import "vendor/_jquery.mCustomScrollbar";
 
@@ -23,8 +23,6 @@
 @import "partials/components/header";
 @import "partials/components/nav";
 @import "partials/components/btn";
-// @import "partials/components/form-cert";
-// @import "partials/components/form-question";
 @import "partials/components/form";
 @import "partials/components/overlay";
 // @import "partials/components/page-pagination";

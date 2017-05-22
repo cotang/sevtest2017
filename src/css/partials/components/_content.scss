@@ -1,11 +1,15 @@
 .content{
   padding: 60px 0 40px;
   clear: both;
+  @media (max-width: $screen-md){
+    padding: 20px 0;
+  }
   &__title{
     color: $blue;
     @include font-family('Helvetica Bold', normal, normal);
     margin: 10px 0 30px;
     font-size: 36px;
+    word-wrap: break-word;
   }
   &__date{
     @include font-family('TT Lakes Medium', normal, normal);
@@ -27,56 +31,27 @@
       font-size: 18px;
     }
   }
-
-
-
-  // &__title{
-  //   margin: 0 0 20px;
-  //   @include font-family('Proxima Nova Light', normal, normal);
-  //   font-size: $font-size-title;
-  //   color: $text-black;
-  //   @include mq($from:xs, $until:lg){
-  //     font-size: 28px;
-  //     @include font-family('Proxima Nova Regular', normal, normal);
-  //   }
-  // }
-  // &__text{
-  //   h2, h3, h4, h5, h6{
-  //     @include font-family('Proxima Nova Regular', normal, normal);
-  //     color: $text-black;
-  //   }
-  //   h2{
-  //     font-size: $font-size-h2;
-  //   }
-  //   h3{
-  //     font-size: $font-size-h3;
-  //   }
-  //   h4, h5, h6{
-  //     font-size: $font-size-big;
-  //   }
-  // }
-
   &__img{
     float: left;
     box-shadow: -1px 12px 27px 0px rgba(0, 0, 0, 0.11);
     margin: 0 20px 20px 0;
     max-width: 350px;
-    @include mq($from:xs, $until:lg){
-      margin: 0 0 20px;
-      max-width: initial;
+  }
+  &__back{
+    .btn{
+      @include font-family('Helvetica Light', normal, normal);
+      font-size: 16px;
     }
   }
-  // &__btn{
-  //   margin: 20px 0;
-  //   text-align: center;
-  //   .btn{
-  //     text-transform: none;
-  //   }
-  // }
+
 }
+
 
 .content-news{
   padding: 60px 0 40px;
+  @media (max-width: $screen-md){
+    padding: 20px 0;
+  }
   &__title{
     position: relative;
     color: $blue;
@@ -85,6 +60,10 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
+    @media (max-width: $screen-md){
+      margin: 0 0 30px;
+      font-size: 24px;
+    }
     &:after{
       content: '';
       position: absolute;
@@ -100,7 +79,10 @@
 
 .content-about{
   padding: 60px 0 40px;
-  clear: both;
+  // clear: both;
+  @media (max-width: $screen-md){
+    padding: 20px 0;
+  }
   &__title{
     position: relative;
     color: $blue;
@@ -109,6 +91,10 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
+    @media (max-width: $screen-md){
+      margin: 0 0 30px;
+      font-size: 24px;
+    }
     &:after{
       content: '';
       position: absolute;
@@ -134,13 +120,19 @@
       margin-left: 10px;
       padding: 10px 40px;
       font-size: 18px;
+      @media (max-width: $screen-md){
+        margin: 10px 0 0;
+      }
     }
   }
 }
 
 .content-services{
   padding: 60px 0 40px;
-  clear: both;
+  // clear: both;
+  @media (max-width: $screen-md){
+    padding: 20px 0;
+  }
   &__title{
     position: relative;
     color: $blue;
@@ -149,6 +141,10 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
+    @media (max-width: $screen-md){
+      margin: 0 0 30px;
+      font-size: 24px;
+    }
     &:after{
       content: '';
       position: absolute;

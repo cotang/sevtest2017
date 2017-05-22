@@ -20,9 +20,14 @@
       max-width: calc(33.3333% - 30px);
       box-shadow: $box-shadow;
       text-align: center;
-      padding: 150px 0 30px;
+      padding: 150px 5px 30px;
       position: relative;
       @include transition();
+      @media (max-width: $screen-md){
+        flex: 0 0 calc(100% - 30px);
+        max-width: calc(100% - 30px);
+      }
+
       > a{
         display: block;
         color: $blue;

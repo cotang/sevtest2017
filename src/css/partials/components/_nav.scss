@@ -8,15 +8,10 @@
     text-transform: uppercase;
     @include font-family('TT Lakes Medium', normal, normal);
     font-size: $font-size-nav;
-//     @include mq($from:xs, $until:lg){
-//       display: none;
-//       position: absolute;
-//       top: 100%;
-//       left: 0;
-//       width: 100%;
-//       background-color: $white;
-//       text-align: center;
-//     }
+
+    @media (max-width: $screen-xl){
+      display: none;
+    }
 
     > .menu-item{
       flex: 1 1 auto;
@@ -25,6 +20,10 @@
         display: block;
         color: $text-white;
         padding: 15px 15px;
+        @media (max-width: $screen-xl){
+          padding: 5px 15px;
+        }
+
         &:hover, &:focus, &:active {
           background-color: $dark-blue;
           color: $link-color;
@@ -32,10 +31,20 @@
       }
       &--search{
         flex: 0 0 auto;
+        @media (max-width: $screen-xl){
+          padding: 5px 0 10px;
+        }
+
         a{
           padding: 0;
           margin: 15px 0;
           @include sprite($s-search-white);
+
+          @media (max-width: $screen-xl){
+            padding: 0;
+            margin: 0 auto;
+          }
+
           &:hover, &:focus, &:active {
             background-color: transparent;
           }
@@ -75,13 +84,13 @@
       }
     }
   }
-//   &__hamburger{
-//     display: none;
-//     text-align: center;
-//     @include mq($from:xs, $until:lg){
-//       display: block;
-//     }
-//   }
+  &__hamburger{
+    display: none;
+    text-align: center;
+    @media (max-width: $screen-xl){
+      display: block;
+    }
+  }
 }
 
 .search{
@@ -106,6 +115,11 @@
     z-index: 9;
     border-top: 1px solid #595c93;
     border-bottom: 1px solid #595c93;
+    @media (max-width: $screen-xl){
+      height: 42px;
+      top: auto;
+      bottom: 0;
+    }
   }
   &__form{
     position: relative;
@@ -116,6 +130,9 @@
       top: 14px;
       right: 0;
       @include sprite($s-search-blue);
+      @media (max-width: $screen-xl){
+        top: 10px;
+      }
     }
   }
   &__input{
@@ -124,6 +141,10 @@
     width: 100%;
     padding: 16px 0;
     @include font-family('Helvetica Bold', normal, normal);
+    @media (max-width: $screen-xl){
+      padding: 10px 0;
+    }
+
     &::-webkit-input-placeholder{
       color: $blue;
     }
@@ -139,29 +160,29 @@
   }
 }
 
-// .hamburger{
-//   display: inline-block;
-//   padding: 17px 6px;
-//   border-radius: 3px;
-//   span{
-//     display: block;
-//     width: 30px;
-//     margin: 0 auto;
-//     height: 3px;
-//     background-color: $text-color;
+.hamburger{
+  display: inline-block;
+  padding: 17px 6px 13px;
+  border-radius: 3px;
+  span{
+    display: block;
+    width: 30px;
+    margin: 0 auto;
+    height: 3px;
+    background-color: $white;
 
-//     &:after, &:before{
-//       content: "";
-//       display: block;
-//       width: 30px;
-//       height: 3px;
-//       background-color: $text-color;
-//     }
-//     &:before{
-//       transform: translateY(-9px);
-//     }
-//     &:after{
-//       transform: translateY(6px);
-//     }
-//   }
-// }
+    &:after, &:before{
+      content: "";
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: $white;
+    }
+    &:before{
+      transform: translateY(-9px);
+    }
+    &:after{
+      transform: translateY(6px);
+    }
+  }
+}

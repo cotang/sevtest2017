@@ -41,10 +41,10 @@ mixin header()
 
         +e.social
           +b.social
-            +e.A.link--rss(href="#", title="rss link")
-            +e.A.link--vk(href="#", title="vkontakte link")
-            +e.A.link--tw(href="#", title="twitter link")
-            +e.A.link--fb(href="#", title="facebook link")
+            +e.A.link--rss(href="/rss", title="rss link")
+            +e.A.link--vk(href="https://vk.com/serificaty", title="vkontakte link")
+            +e.A.link--tw(href="https://twitter.com/sevtest_ru", title="twitter link")
+            +e.A.link--fb(href=" https://www.facebook.com/sevtest.ru/", title="facebook link")
           +b.A.btn(href="#", data-form='call') Позвонить
           +e.btn
             +b.A.btn--white(href="#", data-form='map') На карте
@@ -54,6 +54,9 @@ mixin header()
       .container
         // Nav
         +b.NAV.nav
+          +e.hamburger
+            +b.A.hamburger(href="#")
+              span
           +e.UL.list
             li.menu-item
               a(href="page-about.html") О компании
@@ -74,9 +77,7 @@ mixin header()
               a(href="page-contacts.html") Контакты
             li.menu-item.menu-item--search
               a(href="#", title="Поиск")
-          +e.hamburger
-            +b.A.hamburger(href="#")
-              span
+
 
       // Search
       +b.search
