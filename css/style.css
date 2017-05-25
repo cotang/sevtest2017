@@ -3940,7 +3940,7 @@ form.mcc-form .mcc_captcha_reload {
     max-width: 570px;
     border-radius: 5px;
     background-color: #ffffff;
-    padding: 40px; }
+    padding: 20px; }
   .overlay .form {
     display: none; }
   .overlay .gratitude__img {
@@ -3957,6 +3957,20 @@ form.mcc-form .mcc_captcha_reload {
     border: 1px solid #9d9d9d; }
     .overlay .gratitude__img img {
       object-fit: contain; }
+
+.overlay-form {
+  display: none;
+  padding: 10px; }
+  .overlay-form__title {
+    text-align: center;
+    color: #39487d;
+    font-family: "Helvetica Bold", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    margin: 10px 0 10px;
+    font-size: 28px; }
+  .overlay-form form.mcc-form .mcc-label {
+    display: none; }
 
 .footer {
   background-color: #39487d;
