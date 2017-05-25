@@ -242,8 +242,8 @@ jQuery(document).ready(function($){
     // jQuery('.recaptcha').data('capsize','normal')
 
     /* mcc forms - placeholders */
-    var myForm = jQuery('.banner-form, .footer-form, .sidebar-form');
-    myForm.find('.mcc-form input').each(function() {
+    var myForm = jQuery('.banner-form, .footer-form, .sidebar-form, .overlay-form');
+    myForm.find('.mcc-form input, .mcc-form textarea').each(function() {
       var e = jQuery(this);
       var text = e.closest('.mcc-value').prev('.mcc-label').find('div').text();
       text = text.replace(/\s+/g,' ');

@@ -94,9 +94,9 @@ gulp.task('pug', function() {
     .pipe(gulpif(devBuild, changed(path.build.html, {extension: '.html'})))
     .pipe(gulpif(global.isWatching, cached('pug')))
     .pipe(pugInheritance({basedir: path.src.htmlDir, extension: '.pug', skip:'node_modules'}))
-    .pipe(filter(function (file) {
-      return !/\/_/.test(file.path) && !/^_/.test(file.relative);
-    }))
+//    .pipe(filter(function (file) {
+  //    return !/\/_/.test(file.path) && !/^_/.test(file.relative);
+  //  }))
     .pipe(pug())
     .pipe(prettify({
       indent_size: 2

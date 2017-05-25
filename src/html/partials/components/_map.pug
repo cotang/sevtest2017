@@ -1,21 +1,20 @@
-mixin map()
+include ../abstracts/bemto/bemto.pug
 
-  +b.SECTION.map
-    .container
-      +e.H2.title Как нас найти
++b.SECTION.map
+  .container
+    +e.H2.title Как нас найти
 
-      +b.map-city(itemscope, itemtype="http://schema.org/ContactPoint")
-        +e.column
-          +e.SPAN.name(href="#", itemprop="areaServed") Санкт-Петербург
-          +e.address ул. Яблочкова, д. 12, лит. Ц., оф. 314
-          +e.working-hours с 9:30 до 18:00
-        +e.column
-          +e.tel-wrapper
-            +e.A.tel(href="tel:+78124935927", target="_blank", itemprop="telephone") +7 (812) 493-59-27
-            +e.A.tel(href="tel:+78129512642", target="_blank", itemprop="telephone") +7 (812) 951-26-42
-          +e.email-wrapper
-            +e.A.email(href="mailto:otdel@rostest.net", target="_blank", itemprop="email") spb@sevtest.ru
+    +b.map-city(itemscope, itemtype="http://schema.org/ContactPoint")
+      +e.column
+        +e.SPAN.name(href="#", itemprop="areaServed") Санкт-Петербург
+        +e.address ул. Яблочкова, д. 12, лит. Ц., оф. 314
+        +e.working-hours с 9:30 до 18:00
+      +e.column
+        +e.tel-wrapper
+          +e.A.tel(href="tel:+78124935927", target="_blank", itemprop="telephone") +7 (812) 493-59-27
+          +e.A.tel(href="tel:+78129512642", target="_blank", itemprop="telephone") +7 (812) 951-26-42
+        +e.email-wrapper
+          +e.A.email(href="mailto:otdel@rostest.net", target="_blank", itemprop="email") spb@sevtest.ru
 
-    +e.frame(data-lat="59.907936", data-lng="30.300848")
-
+  +e.frame(data-lat="59.907936", data-lng="30.300848")
 
